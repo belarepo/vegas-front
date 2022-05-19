@@ -88,7 +88,10 @@ GENERAL
 ---------------------------------------------------
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "iransans";
+  src: url("../fonts/IRANSansWeb_Light.woff") format("woff");
+}
 
 /*===GENERAL===*/
 .site-text-primary {
@@ -129,7 +132,7 @@ GENERAL
 }
 body {
   color: #626262;
-  font-family: "Mulish";
+  font-family: "iransans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.7;
   font-weight: normal;
   padding: 0px;
