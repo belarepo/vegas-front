@@ -5497,7 +5497,7 @@ body[class*="active-"] .cs-message-panel { box-shadow: 0 0px 150px 0px rgba(0, 0
 
 .aon-banner-bg { position:absolute; top:20%; left:0px; background-color:#ff8a00; width:calc(50% - 30px); height:60%; font-family:arial; font-weight:bold; }
 .aon-banner-bg span { color:#fff; font-size:180px; opacity:0.2; display:table; line-height:1; }
-.aon-banner-bg .star-one { position: absolute; top: -95px; right: -65px; color: #ff8a00; font-size: 150px; opacity: 1; }
+.aon-banner-bg .star-one { position: absolute; top: -95px; right: -65px; color: hsla(0,0%,100%,0.38); font-size: 150px; opacity: 1; }
 .aon-banner-bg .star-two { position: absolute; top:-50px; left:-40px; color: #fff; font-size:350px; opacity:0.2; }
 .aon-banner-bg .star-three { position: absolute; top:50px; left:30%; color: #fff; font-size: 150px; opacity:0.2; }
 .aon-banner-bg .star-four { position: absolute; bottom:-80px; left:10%; color: #fff; font-size:450px; opacity:0.2; }
