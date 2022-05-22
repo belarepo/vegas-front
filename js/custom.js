@@ -978,8 +978,8 @@ All JavaScript fuctions Start
 	function page_loader() {
 		$('.loading-area').fadeOut(1000);
         
-        jQuery(".aon-banner-wrap").delay(100000).addClass("aon-banner-animate");
-        jQuery(".aon-banner2-wrap").delay(100000).addClass("aon-banner2-animate");        
+        jQuery(".aon-banner-wrap").delay(1000).addClass("aon-banner-animate");
+        jQuery(".aon-banner2-wrap").delay(1000).addClass("aon-banner2-animate");        
 		
 	}
 
