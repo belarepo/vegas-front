@@ -89,8 +89,8 @@ GENERAL
 */
 
 @font-face {
-  font-family: "iransans";
-  src: url("../fonts/IRANSansWeb_Light.woff") format("woff");
+  font-family: "faraz";
+  src: url("../fonts/Mj_Faraz.ttf");
 }
 
 /*===GENERAL===*/
@@ -132,13 +132,13 @@ GENERAL
 }
 body {
   color: #626262;
-  font-family: "iransans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "faraz", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.7;
   font-weight: normal;
   padding: 0px;
   margin: 0px;
   overflow-x: hidden;
-  font-size: 14px;
+  font-size: 20px;
 }
 a {
   color: #000;
@@ -2306,7 +2306,7 @@ THEMEFOREST REQUIRED CLASSES
 }
 .header-nav .nav > li > a {
   color: #000;
-  font-size: 16px;
+  font-size: 30px;
   padding: 15px 10px;
   cursor: pointer;
   margin: 0px 0px;
