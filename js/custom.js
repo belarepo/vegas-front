@@ -129,6 +129,9 @@ All JavaScript fuctions Start
 		jQuery('.shop-style1-slider').owlCarousel({
 			rtl: true,
 			loop:true,
+			autoplay:true,
+    		autoplayTimeout:2000,
+    		autoplayHoverPause:true,
 			margin:30,
 			nav:true,
 			dots: false,
