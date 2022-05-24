@@ -127,13 +127,13 @@ All JavaScript fuctions Start
 // Product Slider function by = owl.carousel.js
 	function shop_style1_slider(){
 		jQuery('.shop-style1-slider').owlCarousel({
-			rtl: false,
-			loop:false,
+			rtl: true,
+			loop:true,
 			margin:30,
 			nav:true,
 			dots: false,
 			items:1,
-			navText: ['<span class="ar-left"></span>', '<span class="ar-right"></span>'],
+			navText: ['<span><<</span>', '<span>>></span>'],
 			responsive:{
 				0:{
 					items:1
