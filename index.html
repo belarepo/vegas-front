@@ -16,13 +16,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
 
     <!-- PAGE TITLE HERE -->
-    <title>#</title>
+    <title>Vegas</title>
 
     <!-- MOBILE SPECIFIC -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- BOOTSTRAP STYLE SHEET -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- NORMALIZE -->
+    <link rel="stylesheet" href="css/normalize.css">
 
     <!-- OWL CAROUSEL STYLE SHEET -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -56,62 +56,45 @@
     <div class="page-wraper">
 
         <!-- HEADER START -->
-        <header class="site-header header-style-1 mobile-sider-drawer-menu header-full-width">
-            <div class="sticky-header main-bar-wraper  navbar-expand-lg">
-                <div class="main-bar">
+        <header class="site-header">
 
-                    <div class="container clearfix">
-                        <!--Logo section start-->
-                        <div class="logo-header">
-                            <div class="logo-header-inner logo-header-one">
-                                <a href="index.html">
-                                    <img class="logo-pic-one" src="images/logo-light.png" alt="">
-                                    <img class="logo-pic-two" src="images/logo-dark.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <!--Logo section End-->
+            <!--Logo section start-->
+            <div class="logo-header">
+                <a href="index.html">
+                    <img class="logo-pic-one" src="images/logo.png" alt="LOGO">
+                </a>
+            </div>
+            <!--Logo section End-->
 
-                        <!-- NAV Toggle Button -->
-                        <button id="mobile-side-drawer" data-target=".header-nav" data-toggle="collapse" type="button"
-                            class="navbar-toggler collapsed">
+            <!-- NAV Toggle Button -->
+            <button id="mobile-side-drawer" class="navbar-toggler collapsed">
+                <span class="icon-bar icon-bar-first"></span>
+                <span class="icon-bar icon-bar-two"></span>
+                <span class="icon-bar icon-bar-three"></span>
+            </button>
 
-                            <span class="icon-bar icon-bar-first"></span>
-                            <span class="icon-bar icon-bar-two"></span>
-                            <span class="icon-bar icon-bar-three"></span>
-                        </button>
+            <!-- MAIN Nav -->
+            <ul class="menu">
 
-                        <!-- MAIN Nav -->
-                        <div class="nav-animation header-nav navbar-collapse collapse d-flex justify-content-center ">
+                <li class="has-child current-menu-item"><a href="index.html">خانه</a></li>
 
-                            <ul class=" nav navbar-nav">
+                <li class="has-child"><a href="./blog-grid.html">بلاگ</a></li>
 
-                                <li class="has-child current-menu-item"><a href="index.html">خانه</a></li>
+                <li class="has-child"><a href="#">درباره ما</a></li>
 
-                                <li class="has-child"><a href="./blog-grid.html">بلاگ</a></li>
+                <li class="has-child" id="contact-us"><a href="#site-footer">تماس با ما</a></li>
 
-                                <li class="has-child"><a href="#">درباره ما</a></li>
+            </ul>
 
-                                <li class="has-child" id="contactus"><a href="#site-footer">تماس با ما</a></li>
+            <!--Sign in-->
+            <div class="sign-in">
 
-                            </ul>
+                <a href="login-page.html" class="site-button login-button">
+                    <img src="./images/statics-icon/user.svg" alt="login" width="25rem">
+                </a>
 
-                        </div>
+            </div>
 
-                        <!-- Header Right Section-->
-                        <div class="extra-nav header-2-nav">
-                            <div class="extra-cell">
-
-                                <!--Sign up-->
-                                <a href="login-page.html" class="site-button login-button"><img
-                                        src="./images/statics-icon/user.svg" alt="login" width="25rem"></a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
         </header>
         <!-- HEADER END -->
 
@@ -960,9 +943,9 @@
 
 
     <!-- JAVASCRIPT  FILES ========================================= -->
-    <script src="js/jquery-3.6.0.min.js"></script><!-- JQUERY.MIN JS -->
+    <script src="js/jquery-3.6.0.min.js"></script><!-- JQUERY.MIN.JS -->
     <script src="js/owl.carousel.min.js"></script><!-- OWL  SLIDER  -->
-    <script src="js/custom.js"></script><!-- CUSTOM FUCTIONS  -->
+    <script src="js/custom.js">          </script><!-- CUSTOM FUCTIONS  -->
 
 
 
