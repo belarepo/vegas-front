@@ -1,4 +1,9 @@
+/* Mobile first CSS */
+
+/********** Generals **********/
+
 /* Load fonts */
+
 @font-face {
   font-family: 'faraz';
   src: url('../fonts/Mj_Faraz.ttf');
@@ -7,44 +12,201 @@
   font-family: 'baran';
   src: url('../fonts/B\ Mitra.ttf');
 }
+
 /* Load fonts end */
 
-/* Mobile first CSS */
+/* Normalize */
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+html,
+body,
+header,
+button,
+img,
+div,
+a,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+}
 
 
+/* Body typography */
+
+body {
+  font-family: 'faraz', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+}
+
+/********** Generals end **********/
+
+/********** Header **********/
+
+/* Header positioning */
+header {
+  background-color: transparent;
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color ease 500ms;
+}
+header.scrolldown {
+  background-color: #e9e9e9;
+}
+.page-wraper {
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: rgb(253, 191, 56);
+}
+
+/* Animated menu toggler mechanism */
+#toggler {
+  display: none;
+}
+
+.navbar-toggler .icon-bar {
+  margin: 7px;
+  width: 22px;
+  height: 3px;
+  background-color: white;
+  transition: transform 1s, opacity 1s;
+}
+
+.tog:checked + ul {
+  transform: translateX(80vw);
+}
+.tog:checked ~ label .icon-bar-1 {
+  transform: rotate(45deg) translateY(11.5px);
+}
+.tog:checked ~ label .icon-bar-2 {
+  transform: translateX(-60px);
+  opacity: 0;
+}
+.tog:checked ~ label .icon-bar-3 {
+  transform: rotate(-45deg) translateY(-11.2px);
+}
 
 
+.menu {
+  position: fixed;
+  top: 0;
+  left: -80vw;
+  width: 80vw;
+  height: 100vh;
+  background: white;
+  border-left: 1px solid #e9e9e9;
+  border-right: 1px solid #e9e9e9;
+  text-align: right;
+  list-style: none;
+  overflow: hidden;
+  transition: transform 1s;
+}
 
 
+.menu li {
+  padding: 3vh 3vw;
+  border-top: 1px solid #e9e9e9;
+  font-size: 1.7rem;
+}
 
+/* Current page color */
+.menu .current-menu-item {
+  color: #ff8a00;
+}
 
+/* sign in button */
+/* .sign-in {
+  padding: 10px;
+  border-radius: 0.5em;
+  line-height: 3em;
+  text-align: center;
+  color: #fff;
+  margin: 3px;
+  letter-spacing: 1px;
+  position: relative;
+  left: 7px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff8a00;
 
+  font-size: 15px;
+} */
+.sign-in a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.logo-header a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-
-
-
-
-
-
-
+/********** Header end **********/
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  .navbar-toggler {
+    display: none;
+  }
 
+  .menu {
+    position: static;
+    width: unset;
+    height: unset;
+    color: white;
+    background-color: transparent;
+    border: none;
+    transition: color ease 500ms;
+
+  }
+  .menu.scrolldown {
+  color: black;
+}
+  .menu li {
+    float: right;
+    padding: 0.4em 0.5em;
+    border: none;
+    font-size: 1.7rem;
+  }
+
+  .logo-header {
+    order: 1;
+  }
+  .menu-wrapper {
+    order: 2;
+  }
+  .sign-in {
+    order: 3;
+    left: -7px;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-
 }
