@@ -28,6 +28,11 @@
     <!-- MAIN STYLE SHEET -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- JAVASCRIPT  FILES -->
+    <script src="js/jquery-3.6.0.min.js" defer></script><!-- JQUERY.MIN.JS -->
+        
+    <script src="js/custom.js" defer></script>          <!-- CUSTOM FUCTIONS -->
+
 </head>
 
 <body>
@@ -280,132 +285,139 @@
             </section>
             <!-- Title Section End -->
 
+
+
+
+
+
+
+
+
             <!-- Faq Section -->
-            <section class="aon-med-faq-area bg-white">
-                <div class="container">
+            <section class="faq-area">
 
-                    <!--Title Section Start-->
-                    <div class="section-head center">
-                        <span class="aon-sub-title">FAQs for Patients</span>
-                        <h2 class="aon-title">Frequently Ask Questions?</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry the standard dummy
-                            text ever since the when an printer took.</p>
-                    </div>
-                    <!--Title Section End-->
-
-                    <div class="section-content">
-                        <div class="aon-med-faq-section">
-                            <div class="accordion aon-med-faq" id="sf-faq-accordion">
-                                <!--One-->
-                                <div class="accordion-item">
-
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#FAQ1" aria-expanded="false">
-                                        Can I book an appointment behalf or someone else?
-                                    </button>
-
-                                    <div id="FAQ1" class="accordion-collapse collapse"
-                                        data-bs-parent="#sf-faq-accordion">
-                                        <div class="accordion-body">
-                                            Best service are provide us. simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy.
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <!--Two-->
-                                <div class="accordion-item">
-
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#FAQ2" aria-expanded="false">
-                                        Do I need a referral to see a Physiotherapist?
-                                    </button>
-
-                                    <div id="FAQ2" class="accordion-collapse collapse"
-                                        data-bs-parent="#sf-faq-accordion">
-                                        <div class="accordion-body">
-                                            Best service are provide us. simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy.
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <!--Three-->
-                                <div class="accordion-item">
-
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#FAQ3" aria-expanded="false">
-                                        Can I book an appointment behalf or someone else?
-                                    </button>
-
-                                    <div id="FAQ3" class="accordion-collapse collapse"
-                                        data-bs-parent="#sf-faq-accordion">
-                                        <div class="accordion-body">
-                                            Best service are provide us. simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Four-->
-                                <div class="accordion-item">
-
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#FAQ4" aria-expanded="false">
-                                        Do you have venue option for appointments?
-                                    </button>
-
-                                    <div id="FAQ4" class="accordion-collapse collapse"
-                                        data-bs-parent="#sf-faq-accordion">
-                                        <div class="accordion-body">
-                                            Best service are provide us. simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Five-->
-                                <div class="accordion-item">
-
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#FAQ5" aria-expanded="false">
-                                        Can I book an appointment behalf or someone else?
-                                    </button>
-
-                                    <div id="FAQ5" class="accordion-collapse collapse"
-                                        data-bs-parent="#sf-faq-accordion">
-                                        <div class="accordion-body">
-                                            Best service are provide us. simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Six-->
-                                <div class="accordion-item">
-
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#FAQ6" aria-expanded="false">
-                                        Will I need a referral to see a Physiotherapist?
-                                    </button>
-
-                                    <div id="FAQ6" class="accordion-collapse collapse"
-                                        data-bs-parent="#sf-faq-accordion">
-                                        <div class="accordion-body">
-                                            Best service are provide us. simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy.
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                <!--Title Section Start-->
+                <div class="faq-area-head">
+                    <span>FAQs for Patients</span>
+                    <h2>Frequently Ask Questions?</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry the standard dummy
+                        text ever since the when an printer took.</p>
                 </div>
+
+                <!--content Section start-->
+                <div class="faq-area-content">
+
+                    <!--One-->
+                    <div class="accordion-item">
+
+                        <input type="checkbox" id="ch-bx-1">
+                        <label for="ch-bx-1">
+                            <h3> Can I book an appointment behalf or someone else?</h3>
+                        </label>
+
+                        <div class="accordion-body">
+                            Best service are provide us. simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                        </div>
+
+                    </div>
+                    <!-- two -->
+                    <div class="accordion-item">
+
+                        <input type="checkbox" id="ch-bx-2">
+                        <label for="ch-bx-2">
+                            <h3 class="accordion-title"> Can I book an appointment behalf or someone else?</h3>
+                        </label>
+
+                        <div class="accordion-body">
+                            Best service are provide us. simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                        </div>
+
+                    </div>
+                    <!-- three -->
+                    <div class="accordion-item">
+
+                        <input type="checkbox" id="ch-bx-3">
+                        <label for="ch-bx-3">
+                            <h3 class="accordion-title"> Can I book an appointment behalf or someone else?</h3>
+                        </label>
+
+                        <div class="accordion-body">
+                            Best service are provide us. simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                        </div>
+
+                    </div>
+                    <!-- four -->
+                    <div class="accordion-item">
+
+                        <input type="checkbox" id="ch-bx-4">
+                        <label for="ch-bx-4">
+                            <h3 class="accordion-title"> Can I book an appointment behalf or someone else?</h3>
+                        </label>
+
+                        <div class="accordion-body">
+                            Best service are provide us. simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                        </div>
+
+                    </div>
+                    <!-- five -->
+                    <div class="accordion-item">
+
+                        <input type="checkbox" id="ch-bx-5">
+                        <label for="ch-bx-5">
+                            <h3 class="accordion-title"> Can I book an appointment behalf or someone else?</h3>
+                        </label>
+
+                        <div class="accordion-body">
+                            Best service are provide us. simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                        </div>
+
+                    </div>
+                    <!-- six -->
+                    <div class="accordion-item">
+
+                        <input type="checkbox" id="ch-bx-6">
+                        <label for="ch-bx-6">
+                            <h3 class="accordion-title"> Can I book an appointment behalf or someone else?</h3>
+                        </label>
+
+                        <div class="accordion-body">
+                            Best service are provide us. simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                        </div>
+
+                    </div>
+
+
+                </div>
+
             </section>
-            <!-- Faq Categories End -->
+            <!-- Faq section End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <!-- Product Section -->
             <div class="aon-med-shop-area">
@@ -663,8 +675,6 @@
             </section>
             <!-- Latest Blog End -->
 
-
-
         </div>
         <!-- CONTENT END -->
 
@@ -736,15 +746,9 @@
         </footer>
         <!-- FOOTER END -->
 
-
         <!-- BUTTON TOP START -->
         <a href="#"><button class="scroltop"><img src="./images/statics-icon/up-arrow.png" alt="UP"></button></a>
     </div>
-
-    <!-- JAVASCRIPT  FILES ========================================= -->
-    <script src="js/jquery-3.6.0.min.js"></script><!-- JQUERY.MIN.JS -->
-
-    <script src="js/custom.js">        </script><!-- CUSTOM FUCTIONS -->
 
 </body>
 

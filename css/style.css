@@ -35,6 +35,7 @@ h2,
 h3,
 h4,
 h5 {
+  line-height: inherit;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -305,7 +306,79 @@ header.scrolldown {
 }
 
 
+/********** FAQ section **********/
 
+.faq-area-head {
+  padding:  3em 1.5em 1.5em;
+  background-color: white;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.faq-area-head span {
+  display: block;
+  margin: 1em;
+  color: #ff8a00;
+  /* letter-spacing: 5px; */
+  font-weight: 600;
+}
+
+.faq-area-head h2 {
+  line-height: 1.3;
+}
+
+.faq-area-head p {
+  color: #626262;
+}
+
+
+.faq-area-content {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.accordion-item {
+  margin: 1.5em;
+  padding: 0.5em 1em;
+  border: #2c6c5e solid 3px;
+  border-radius: 10px;
+  text-align: right;
+}
+
+.accordion-item input {
+  display: none;
+}
+
+.accordion-item h3 {
+  font-size: small;
+  color: #2c6c5e;
+}
+
+.accordion-item div {
+  font-size: smaller;
+  transition: max-height ease 1s;
+  max-height: 0;
+  overflow: hidden;
+  color: #626262;
+}
+
+.accordion-item input:checked ~  div {
+  
+  max-height: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/********** FAQ section end **********/
 
 
 
