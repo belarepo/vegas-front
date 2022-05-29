@@ -26,5 +26,23 @@ $(function () {
 		}
 	});
 
+	$('.samples-section-carousel').animate({
+    left: '-' + $('#samples-section-item').css('width').slice(0, -2) * 4,
+  });
+
+
+console.log()
+
+
+
+
+
+
+
+
+
+
+
+
 });
 
