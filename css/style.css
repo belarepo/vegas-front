@@ -1,6 +1,6 @@
-/* Mobile first CSS */
+/*************** Normalize.css ***************/
 
-/********** Generals **********/
+/*************** Normalize.css end ***************/
 
 /* Load fonts */
 
@@ -10,14 +10,23 @@
 }
 @font-face {
   font-family: 'baran';
-  src: url('../fonts/B\ Mitra.ttf');
+  src: url('../fonts/B_Mitra.ttf');
+}
+@font-face {
+  font-family: 'nazanin';
+  src: url('../fonts/B_Nazanin.ttf');
 }
 
 /* Load fonts end */
 
+/* Mobile first CSS */
+
+/********** Generals **********/
+
 /* Normalize */
 a,
-a:visited {
+a:visited,
+a:active {
   text-decoration: none;
   color: inherit;
 }
@@ -40,6 +49,7 @@ h5 {
   margin: 0;
   box-sizing: border-box;
   border: none;
+  scroll-behavior: smooth;
 }
 
 ul {
@@ -49,17 +59,18 @@ ul {
 /* Body typography */
 
 body {
-  font-family: 'faraz', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: nazanin, baran;
   line-height: 1.7;
-  scroll-behavior: smooth;
 }
 
 /********** Generals end **********/
+
 
 /********** Header **********/
 
 /* Header positioning */
 header {
+  font-family: faraz, nazanin, baran;
   background-color: transparent;
   position: fixed;
   width: 100vw;
@@ -108,7 +119,6 @@ header.scrolldown {
   transform: rotate(-45deg) translateY(-11.2px);
 }
 
-
 .menu {
   position: fixed;
   top: 0;
@@ -123,7 +133,6 @@ header.scrolldown {
   overflow: hidden;
   transition: transform 1s;
 }
-
 
 .menu li {
   padding: 3vh 3vw;
@@ -178,7 +187,7 @@ header.scrolldown {
   padding: 100px 0 0 0;
   background-color: #2c6c5e;
   color: white;
-  text-align: right
+  text-align: right;
 }
 
 .banner-right {
@@ -210,11 +219,10 @@ header.scrolldown {
   padding: 0 5px;
 }
 
-
 /**/
 
 .banner-left {
-  position: relative;;
+  position: relative;
 }
 .banner-pic {
   visibility: hidden;
@@ -228,17 +236,17 @@ header.scrolldown {
 }
 
 .banner-bg {
-    position: absolute;
-    top: auto;
-    left: 0px;
-    background-color: #ff8a00;
-    width: 80%;
-    height: calc(100% - 150px);
+  position: absolute;
+  top: auto;
+  left: 0px;
+  background-color: #ff8a00;
+  width: 80%;
+  height: calc(100% - 150px);
 
-    bottom: 0;
+  bottom: 0;
 }
 
-.animted-star {  
+.animted-star {
   position: absolute;
   color: white;
   opacity: 0.2;
@@ -248,7 +256,7 @@ header.scrolldown {
   font-size: 150px;
   top: -112px;
   right: -34px;
-  }
+}
 .star-2 {
   font-size: 350px;
   top: -50px;
@@ -258,22 +266,21 @@ header.scrolldown {
   font-size: 150px;
   top: 50px;
   left: 30%;
-  }
+}
 .star-4 {
   font-size: 450px;
   bottom: -80px;
-  left: 10%;  
-  }
+  left: 10%;
+}
 
 @keyframes updown {
-  from{
+  from {
     transform: translateY(10px);
   }
-  to{
+  to {
     transform: translateY(-10px);
   }
 }
-
 
 /********** Banner end **********/
 
@@ -287,14 +294,13 @@ header.scrolldown {
 }
 
 .working-area p {
-      color: #626262;
-
+  color: #626262;
 }
 
 .working-area-media {
   display: flex;
   width: 100px;
-  height: 90px;  
+  height: 90px;
   margin: 20px auto;
   padding: 15px;
   border-radius: 5px;
@@ -313,11 +319,10 @@ header.scrolldown {
   font-size: 1.5;
 }
 
-
 /********** FAQ section **********/
 
 .faq-area-head {
-  padding:  3em 1.5em 1.5em;
+  padding: 3em 1.5em 1.5em;
   text-align: center;
   line-height: 1.7;
 }
@@ -337,7 +342,6 @@ header.scrolldown {
 .faq-area-head p {
   color: #626262;
 }
-
 
 .faq-area-content {
   display: flex;
@@ -370,20 +374,9 @@ header.scrolldown {
   color: #626262;
 }
 
-.accordion-item input:checked ~  div {
-  
+.accordion-item input:checked ~ div {
   max-height: 150px;
 }
-
-
-
-
-
-
-
-
-
-
 
 /********** FAQ section end **********/
 
@@ -392,7 +385,7 @@ header.scrolldown {
 }
 
 .samples-section-head {
-  padding:  3em 1.5em 1.5em;
+  padding: 3em 1.5em 1.5em;
   background-color: white;
   text-align: center;
   line-height: 1.7;
@@ -412,24 +405,11 @@ header.scrolldown {
   color: #626262;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .samples-section-frame {
   /* overflow: hidden; */
   background-color: darkred;
   width: 100%;
 }
-
-
 
 .samples-section-carousel {
   position: relative;
@@ -462,15 +442,15 @@ header.scrolldown {
 }
 
 .blog-section-head span {
-    color: #ff8a00;
+  color: #ff8a00;
 }
 
-.blog-section-head h2 {}
+.blog-section-head h2 {
+}
 
 .blog-section-head p {
   color: #626262;
 }
-
 
 /* posts */
 .blog-section-content {
@@ -492,10 +472,10 @@ header.scrolldown {
 }
 
 .post-date {
-padding: 0.5rem 1rem;
-    position: absolute;
-    bottom: 1.5rem;
-    right: 1rem;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1rem;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -513,9 +493,6 @@ padding: 0.5rem 1rem;
   width: 100%;
   border-bottom: #6b6b6b solid 1px;
 }
-
-
-
 
 .post-text {
   text-align: right;
@@ -538,25 +515,7 @@ padding: 0.5rem 1rem;
   color: #ff8a00;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /********** Blog section end **********/
-
 
 /********** Footer section **********/
 
@@ -566,15 +525,15 @@ footer {
 }
 
 .footer-top-item {
-      padding: 2rem 3ch;
+  padding: 2rem 3ch;
   text-align: right;
 }
 
 .footer-top-item h4 {
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    font-size: 22px;
-    position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  font-size: 22px;
+  position: relative;
 }
 
 .faq-area-content p {
@@ -587,13 +546,13 @@ h4 {
 
 .footer-top-item h4::after {
   position: absolute;
-    left: 0px;
-    bottom: 0px;
-    content: '';
-    width: 60px;
-    height: 2px;
-    background: #ff8a00;
-    display: table;
+  left: 0px;
+  bottom: 0px;
+  content: '';
+  width: 60px;
+  height: 2px;
+  background: #ff8a00;
+  display: table;
 }
 
 .footer-bottom {
@@ -603,35 +562,6 @@ h4 {
   border-top: 1px solid #aabcb7;
   color: #6b6b6b;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .scroltop {
   width: 2.5rem;
@@ -645,40 +575,14 @@ h4 {
   bottom: 2rem;
   border-radius: 50%;
   background-color: #2c6c5e;
-
-
 }
 
 .scroltop::after {
   content: '';
-  border-right: transparent solid .5rem;
-  border-left: transparent solid .5rem;
+  border-right: transparent solid 0.5rem;
+  border-left: transparent solid 0.5rem;
   border-bottom: #ff8a00 solid 1rem;
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -694,11 +598,10 @@ h4 {
     background-color: transparent;
     border: none;
     transition: color ease 500ms;
-
   }
   .menu.scrolldown {
-  color: black;
-}
+    color: black;
+  }
   .menu li {
     float: right;
     padding: 0.4em 0.5em;
