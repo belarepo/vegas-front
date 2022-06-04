@@ -23,6 +23,7 @@ $(function () {
 			
 			$('header').toggleClass('scrolldown');
 			$('.menu').toggleClass('scrolldown');
+			$('.scrolltop').toggleClass('scrolldown');
 		}
 	});
 

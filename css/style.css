@@ -872,10 +872,6 @@ body { display: unset !important;}
   src: url('../fonts/Mj_Faraz.ttf');
 }
 @font-face {
-  font-family: 'baran';
-  src: url('../fonts/B_Mitra.ttf');
-}
-@font-face {
   font-family: 'nazanin';
   src: url('../fonts/B_Nazanin.ttf');
 }
@@ -922,7 +918,7 @@ ul {
 /* Body typography */
 
 body {
-  font-family:  baran;
+  font-family:  nazanin, faraz;
 }
 
 p,
@@ -1430,7 +1426,7 @@ h4 {
   color: #6b6b6b;
 }
 
-.scroltop {
+.scrolltop {
   width: 2.5rem;
   height: 2.5rem;
   padding: 0.5rem;
@@ -1441,14 +1437,23 @@ h4 {
   right: 1.5rem;
   bottom: 2rem;
   border-radius: 50%;
+  box-shadow: inset 0 0 2px  rgba(255, 255, 255, 0.5);
   background-color: #2c6c5e;
+  transition: opacity ease 1000ms;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.scroltop::after {
+.scrolltop.scrolldown {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.scrolltop::after {
   content: '';
   border-right: transparent solid 0.5rem;
   border-left: transparent solid 0.5rem;
-  border-bottom: #ff8a00 solid 1rem;
+  border-bottom: #fff solid 1rem;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -1492,6 +1497,107 @@ h4 {
     /******* Header end ********/
 
   /******* Banner ********/
+
+  .banner-wrap {
+  display: flex;
+  flex-direction: row;
+  padding: 100px 0 0 0;
+  background-color: #2c6c5e;
+  color: white;
+  text-align: right;
+}
+
+.banner-right {
+  padding: 30px 12px 0;
+}
+
+.banner-heading {
+  line-height: 1.2;
+  margin: 0 0 10px;
+  font-size: 1.5em;
+}
+
+.banner-heading span {
+  color: #ff8a00;
+}
+
+.banner-item {
+  padding: 7px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.banner-item div strong {
+  display: block;
+}
+
+.text-banner-item {
+  padding: 0 5px;
+}
+
+/**/
+
+.banner-left {
+  position: relative;
+}
+.banner-pic {
+  visibility: hidden;
+  padding: 10px;
+}
+
+.banner-pic img {
+  position: relative;
+  max-width: 100%;
+  z-index: 3;
+}
+
+.banner-bg {
+  position: absolute;
+  top: auto;
+  left: 0px;
+  background-color: #ff8a00;
+  width: 80%;
+  height: calc(100% - 150px);
+
+  bottom: 0;
+}
+
+.animted-star {
+  position: absolute;
+  color: white;
+  opacity: 0.2;
+}
+
+.star-1 {
+  font-size: 150px;
+  top: -112px;
+  right: -34px;
+}
+.star-2 {
+  font-size: 350px;
+  top: -50px;
+  left: -40px;
+}
+.star-3 {
+  font-size: 150px;
+  top: 50px;
+  left: 30%;
+}
+.star-4 {
+  font-size: 450px;
+  bottom: -80px;
+  left: 10%;
+}
+
+@keyframes updown {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
 
 
   /******* Banner end ********/
