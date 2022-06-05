@@ -1287,22 +1287,23 @@ header.scrolldown .icon-bar {
 .samples-section-frame {
   /* overflow: hidden; */
   background-color: darkred;
-  width: 100%;
 }
 
 .samples-section-carousel {
+  background-color: chartreuse;
   position: relative;
   display: flex;
+  justify-content: space-evenly;
 }
 
 .samples-section-item {
 }
 
 .samples-section-item-media {
-  width: 100vw;
   padding: 1.5rem;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -1403,6 +1404,10 @@ header.scrolldown .icon-bar {
 footer {
   background-color: #d2e7e2;
   border-top: 1px solid #647772;
+  padding: 1em;
+}
+
+.footer-top {
 }
 
 .footer-top-item {
@@ -1549,6 +1554,12 @@ h4 {
   }
 
   /********** working area end **********/
+
+  /***** Footer *****/
+  .footer-top {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
