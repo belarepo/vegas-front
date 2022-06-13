@@ -81,7 +81,7 @@
             const tooltip = document.querySelector('.phons-number-error');
             tooltip.innerHTML = '<br>' + msg;
             tooltip.classList.remove('on');
-            requestAnimationFrame(()=>{
+            requestAnimationFrame(() => {
                 tooltip.classList.add('on');
             });
         }
@@ -148,11 +148,14 @@
                 <div class="form-title">ورود</div>
 
                 <form class="form-body" onsubmit="vali(event)">
-                    <div class="phone-number-parent">
-                        <input type="tel" name="" id="" oninput="telCorrector(this, event)">
-                        <a href="#"><div>ورود با رمز عبور</div></a>
-                        <span class="phons-number-error"></span>
-                    </div>
+                    <label for="name-field">نام و نام‌خانوادگی</label>
+                    <input type="text" maxlength="30" name="" id="name-field" >
+                    <label for="pass-1">رمز عبور</label>
+                    <input type="password" maxlength="20" name="" id="pass-1" >
+                    <label for="pass-2">تکرار رمز عبور</label>
+                    <input type="password" maxlength="20" name="" id="pass-2" >
+                    <label for="sent-code">کد ارسال شده</label>
+                    <input type="text" name="" maxlength="10" id="sent-code" >
                     <input type="submit" value="ورود">
 
                 </form>

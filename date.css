@@ -1,0 +1,111 @@
+/* parent class */
+/* Pallet */
+@font-face {
+  font-family: faraz;
+  src: url(fonts/B_Nazanin.ttf);
+}
+/* date box */
+.parent-of-date-picker > .date-picker {
+  display: none;
+}
+
+/* date box (focused) */
+.parent-of-date-picker > input:focus + .date-picker {
+  font-size: 50px;
+  box-sizing: border-box;
+  min-width: 10em;
+  display: inline-block;
+  border-radius: 0.625em;
+  overflow: hidden;
+  font-family: faraz;
+  direction: rtl;
+  text-align: center;
+  box-shadow: 0 0 0.0625em 0.0125em rgba(0, 0, 0, 0.377);
+  z-index: 10;
+}
+
+/* status and weekdays section */
+.parent-of-date-picker > div > div:first-child {
+  color: #012c32;
+}
+
+/* status section */
+.parent-of-date-picker > div > div:first-child > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #012c32;
+  box-shadow: 0 0.5px 0.1px rgba(1, 22, 25, 0.5215686275);
+  border-bottom-left-radius: 0.5px;
+  border-bottom-right-radius: 0.5px;
+  font-size: 0.8em;
+  background-image: linear-gradient(to right, #016170, #009393);
+}
+
+/* status section children */
+.parent-of-date-picker > div > div:first-child > div:first-child {
+  padding: 0 0.5em;
+  height: 1.6em;
+}
+
+/* weekday section */
+.parent-of-date-picker > div > div:first-child > div:last-child {
+  line-height: 1.5em;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  font-weight: 500;
+  color: #012c32;
+}
+
+/* weekday section children */
+.parent-of-date-picker > div > div:first-child > div:last-child > div {
+  transform: scale(1.3);
+  font-size: 0.7em;
+  color: #012c32;
+}
+
+/* dates section */
+.parent-of-date-picker > div > div:last-child {
+  color: #012c32;
+}
+
+/* date rows */
+.parent-of-date-picker > div > div:last-child > div {
+  margin-bottom: 0.09em;
+  display: flex;
+  justify-content: space-around;
+  color: #012c32;
+}
+
+/* date rows children (Default ones) */
+.parent-of-date-picker > div > div:last-child > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.3em;
+  width: 1.3em;
+  font-size: 0.6em;
+  /* opacity: 0.1; */
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+/* today style */
+.parent-of-date-picker .today {
+  box-shadow: inset 0 0 0.03125em 0.0375em #012c32;
+}
+
+/* choosed day style */
+.parent-of-date-picker .choosed {
+  background-color: #089c8b;
+  background-image: linear-gradient(to right, #016170, #009393);
+}
+
+/* allowed day style */
+.parent-of-date-picker .allowed {
+  opacity: 1 !important;
+}
+
+/*# sourceMappingURL=date.css.map */

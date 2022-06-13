@@ -10,28 +10,43 @@
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 </head>
 <style>
+    :root {
+        --clr1: #ffffff;
+        --clr2: #00e0c6;
+        --clr3: #009393;
+        --clr4: #016170;
+        --clr5: #012c32;
+        --clr6: #011619;
+    }
+
     @font-face {
         font-family: 'nazanin';
         src: url('../fonts/B_Nazanin.ttf');
     }
 
     body {
-        height: 100vh;
+        position: relative;
+        min-height: 100vh;
         font-family: nazanin;
         font-size: 1.2rem;
-        background-color: #ff8a00;
+        background: rgb(1, 22, 25);
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    a,a:visited,a:active {
+
+    a,
+    a:visited,
+    a:active {
         color: inherit;
         text-decoration: none;
     }
 
     .error-message {
-        background-color: #2c6c5e;
-        color: white;
+        padding: 0 2em 1em;
+        box-shadow: 0 0 4px #011619;
+        background: #012c32;
+        color: #ff8a00;
         width: 100%;
         height: 40%;
         left: 0;
@@ -42,14 +57,26 @@
         flex-direction: column;
     }
 
+    .error-message h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        text-shadow: 0 0 1px hsl(32, 100%, 70%);
+
+    }
+
+    .error-message p {
+        text-align: center;
+        color: hsl(32, 100%, 75%);
+        text-shadow: 0 0 1px hsl(32, 100%, 10%);
+    }
+
     .buttons ul {
-        max-width: 500px;
+        max-width: 350px;
+        min-width: 200px;
         padding: 0;
         margin: 0 auto;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         list-style: none;
-        text-align: center;
     }
 
     .buttons {
@@ -57,22 +84,102 @@
     }
 
     .button {
-        padding: 0.7rem;
+        text-align: center;
+        min-width: 4.5ch;
+        padding: 0.2em 0;
+        font-size: x-large;
+        color: #011619;
+        border-radius: 5px;
         background-color: #ff8a00;
+        background-image: linear-gradient(#ff8a00, hsl(32, 100%, 40%));
+    }
+
+    .error-animations>* {
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        color: #ff8a00;
+        z-index: 2;
+        animation-name: error;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes error {
+        0% {
+            transform: translateY(0%);
+            text-shadow: 0 0 0 hsl(32, 100%, 70%);
+            opacity: .7;
+
+        }
+
+        50% {
+            transform: translateY(20%);
+            text-shadow: 0 0 7px hsl(32, 100%, 70%);
+            opacity: .9;
+
+        }
+
+        100% {
+            transform: translateY(0%);
+            text-shadow: 0 0 0 hsl(32, 100%, 70%);
+            opacity: .7;
+
+        }
+    }
+
+    .error1 {
+        top: 5px;
+        left: 10px;
+        font-size: 3em;
+        animation-duration: 3s;
+    }
+
+    .error2 {
+        top: 55px;
+        left: 5px;
+        font-size: 1.5em;
+        animation-duration: 2.5s;
+    }
+
+    .error3 {
+        top: 32px;
+        left: 70px;
+        font-size: 2em;
+        animation-duration: 1.5s;
+    }
+
+    .error4 {
+        top: 0;
+        left: 100px;
+        font-size: 2em;
+        animation-duration: 3.5s;
     }
 </style>
 
 <body>
-
+    <div class="error-animations">
+        <div class="error1">404</div>
+        <div class="error2">404</div>
+        <div class="error3">404</div>
+        <div class="error4">404</div>
+    </div>
     <div class="error-message">
         <h1>404</h1>
-        <p>اشتباه اومدی بزن به چاک</p>
+        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
         <div class="buttons">
             <ul>
-               <a href="#"> <li class="button">دکمه</li></a>
-               <a href="#"> <li class="button">دکمه</li></a>
-               <a href="#"> <li class="button">دکمه</li></a>
-               <a href="#"> <li class="button">دکمه</li></a>
+                <a href="#">
+                    <li class="button">خانه</li>
+                </a>
+                <a href="#">
+                    <li class="button">رزرو</li>
+                </a>
+                <a href="#">
+                    <li class="button">ورود</li>
+                </a>
+                <a href="#">
+                    <li class="button">وبلاگ</li>
+                </a>
             </ul>
         </div>
     </div>
