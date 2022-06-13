@@ -21,16 +21,83 @@
     <!-- MOBILE SPECIFIC -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+    <!-- NORMALIZE STYLE SHEET -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- MAIN STYLE SHEET -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- JAVASCRIPT  FILES -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script><!-- JQUERY.MIN.JS -->
-    <script src="js/custom.js" defer></script> <!-- CUSTOM FUCTIONS -->
+    <!-- HOMEPAGE STYLE SHEET -->
+    <link rel="stylesheet" href="css/homepage.css">
+
+    <!-- JAVASCRIPT -->
+    <script>
+        window.addEventListener('load', function () {
+            // loading area hiding
+            loadingDNA = document.querySelector('.loading-area');
+            loadingDNA.style.opacity = '0';
+            loadingDNA.style.pointerEvents = 'none';
+
+            // header scroll efects
+            const header = document.querySelector('header');
+            const menu = document.querySelector('.menu');
+            const scroller = document.querySelector('.scrolltop');
+            document.scrollingElement.scrollTop = 0;
+            const shouldIToggle = (function () {
+                let visible = false;
+                return function (scroll) {
+                    if ((scroll > 50 && !visible) || (scroll < 50 && visible)) {
+                        visible = !visible;
+                        return true;
+                    }
+
+                    return false;
+                };
+            })();
+
+            document.addEventListener('scroll', function () {
+                const scrollTop = (this.scrollingElement.scrollTop);
+                if (shouldIToggle(scrollTop)) {
+                    header.classList.toggle('scrolldown');
+                    menu.classList.toggle('scrolldown');
+                    scroller.classList.toggle('scrolldown');
+                }
+            });
+
+            // carousel mechanisms
+            var carousel = document.querySelector('.carousel'),
+                items = document.querySelectorAll('.carousel-item'),
+                currdeg = 0;
+
+            document.querySelector('.next').addEventListener('click', rotate);
+            document.querySelector('.prev').addEventListener('click', rotate);
+
+            function rotate() {
+                if (this.className == "next") {
+                    currdeg = currdeg - 60;
+                }
+                if (this.className == "prev") {
+                    currdeg = currdeg + 60;
+                }
+                carousel.style.transform = "rotateY(" + currdeg + "deg)";
+                carousel.style.webkitTransform = "rotateY(" + currdeg + "deg)";
+                carousel.style.mozTransform = "rotateY(" + currdeg + "deg)";
+                carousel.style.oTransform = "rotateY(" + currdeg + "deg)";
+                items.forEach((el) => {
+                    el.style.transform = "rotateY(" + (-currdeg) + "deg)";
+                    el.style.webkitTransform = "rotateY(" + (-currdeg) + "deg)";
+                    el.style.mozTransform = "rotateY(" + (-currdeg) + "deg)";
+                    el.style.oTransform = "rotateY(" + (-currdeg) + "deg)";
+                });
+            }
+        });
+    </script>
 
 </head>
 
-<body style="display: none;">
+<body style="display: none;" id="top-of-page">
 
     <!-- LOADING AREA START -->
     <div class="loading-area">
@@ -381,83 +448,44 @@
                 </div>
                 <!--Title Section End-->
 
-                <div class="samples-section-frame">
-
-                    <div class="samples-section-carousel">
-                        <!--block 1-->
-                        <div id="samples-section-item">
-
-                            <div class="samples-section-item-media">
-                                <a href="#"><img src="images/samples/pic1.jpg" alt=""></a>
-                            </div>
-                            <div class="samples-section-item-info">
-                                <h4><a href="#">Clutch Bag</a></h4>
-                                <div">
-                                    <strong>$299.00</strong><span>289.00</span>
-                            </div>
+                <div class="container">
+                    <div class="carousel">
+                        <div class="a">
+                            <div class="carousel-item">A</div>
                         </div>
-
-                        <!--block 2-->
-                        <div class="samples-section-item">
-
-                            <div class="samples-section-item-media">
-                                <a href=""><img src="images/samples/pic2.jpg" alt=""></a>
-                            </div>
-                            <div class="samples-section-item-info">
-                                <h4><a href="">Clutch Bag</a></h4>
-                                <div>
-                                    <strong>$299.00</strong><span>289.00</span>
-                                </div>
-                            </div>
-
+                        <div class="b">
+                            <div class="carousel-item">B</div>
                         </div>
-
-                        <!--block 3-->
-                        <div class="samples-section-item">
-
-                            <div class="samples-section-item-media">
-                                <a href=""><img src="images/samples/pic3.jpg" alt=""></a>
-
-                            </div>
-                            <div class="samples-section-item-info">
-                                <h4><a href="">Clutch Bag</a></h4>
-                                <div>
-                                    <strong>$299.00</strong><span>289.00</span>
-                                </div>
-                            </div>
-
+                        <div class="c">
+                            <div class="carousel-item">C</div>
                         </div>
-
-                        <!--block 4-->
-                        <div class="samples-section-item">
-
-                            <div class="samples-section-item-media">
-                                <a href="#"><img src="images/samples/pic4.jpg" alt=""></a>
-
-                            </div>
-                            <div class="samples-section-item-info">
-                                <h4><a href="#">Clutch Bag</a></h4>
-                                <div>
-                                    <strong>$299.00</strong><span>289.00</span>
-                                </div>
-                            </div>
-
+                        <div class="d">
+                            <div class="carousel-item">D</div>
                         </div>
-
-                        <!--block 5-->
-                        <div class="samples-section-item">
-
-                            <div class="samples-section-item-media">
-                                <a href="#"><img src="images/samples/pic5.jpg" alt=""></a>
-                            </div>
-                            <div class="samples-section-item-info">
-                                <h4><a href="#">Clutch Bag</a></h4>
-                                <div>
-                                    <strong>$299.00</strong><span>289.00</span>
-                                </div>
-                            </div>
+                        <div class="e">
+                            <div class="carousel-item">E</div>
+                        </div>
+                        <div class="f">
+                            <div class="carousel-item">F</div>
+                        </div>
+                        <div class="g">
+                            <div class="carousel-item">JUS</div>
+                        </div>
+                        <div class="h">
+                            <div class="carousel-item">ERNEST</div>
+                        </div>
+                        <div class="i">
+                            <div class="carousel-item">HOLA</div>
+                        </div>
+                        <div class="j">
+                            <div class="carousel-item">QUE</div>
+                        </div>
+                        <div class="k">
+                            <div class="carousel-item">TAL</div>
                         </div>
                     </div>
+                    <div class="next">Next</div>
+                    <div class="prev">Prev</div>
                 </div>
             </section>
             <!-- Samples Section End -->
@@ -635,7 +663,7 @@
         <!-- FOOTER END -->
 
         <!-- BUTTON GO TOP -->
-        <a href="#">
+        <a href="#top-of-page">
             <div class="scrolltop"></div>
         </a>
 
