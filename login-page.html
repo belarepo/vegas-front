@@ -13,17 +13,22 @@
     <meta name="description" content="#" />
 
     <!-- FAVICON ICON -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
 
     <!-- PAGE TITLE HERE -->
-    <title>#</title>
+    <title>مرکز لیزر و زیبایی وگاس</title>
+
+    <!-- NORMALIZE STYLE SHEET -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- MOBILE SPECIFIC -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- MAIN STYLE SHEET -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style-login.css">
+    <link rel="stylesheet" href="css/login.css">
 
     <!-- JAVASCRIPT  FILES -->
     <!-- <script src="js/jquery-3.6.0.min.js" defer></script> -->
@@ -55,16 +60,19 @@
             if (Number.isNaN(el.value[el.value.length - 1] * 1)) {
                 el.value = el.value.slice(0, -1);
             }
-
+            if (el.value.length == 12){ el.value = el.value.slice(0, -1); }
+            
         }
-
-        function vali(ev) {
+        
+        function isValid(ev, el) {
             phoneNumber = ev.target[0].value;
-            // console.log(ev);
+            ev.preventDefault();
             if (!(((phoneNumber[0] === '0') && (phoneNumber[0] === '9') && (phoneNumber.length === 11)) || (phoneNumber[0] === '9' && phoneNumber.length === 10))) {
-                ev.preventDefault();
                 invalidPhoneNumber(phoneNumber);
+                return true
             }
+            if (phoneNumber[0] === '9') { ev.target[0].value = '0' + phoneNumber;}
+            el.submit()
         }
 
         function invalidPhoneNumber(invalidNumber) {
@@ -78,10 +86,10 @@
         }
 
         function showTooltip(msg) {
-            const tooltip = document.querySelector('.phons-number-error');
+            const tooltip = document.querySelector('.phone-number-error');
             tooltip.innerHTML = '<br>' + msg;
             tooltip.classList.remove('on');
-            requestAnimationFrame(()=>{
+            requestAnimationFrame(() => {
                 tooltip.classList.add('on');
             });
         }
@@ -123,42 +131,53 @@
 
 
     <div class="login-wrap">
+
         <div class="login-left">
-            <div class="login-left-decor">
-
-                <img src="images/login/doctor.png" alt="" class="login-left-pic" />
-                <div class="login-left-text">Your Trust is Our Greatest Incentive!</div>
-
-            </div>
+            <div class="login-left-decor-bot"></div>
+            <div class="login-left-decor-top"></div>
+            <img class="login-left-pic" src="images/login/login-pic.png" alt="" />
+            <div class="login-left-text">اعتماد شما بزرگترین سرمایه ی ماست!</div>
         </div>
+
         <div class="login-right">
-
-
             <div class="login-right-logo">
-                <a href="index.html"><img src="images/logo.png" alt="" /></a>
+                <a href="index.html">
+                    <svg class="logo-pic" width="41mm" height="40.121582mm" viewBox="0 0 83.383804 40.121582"
+                        version="1.1" xml:space="preserve" sodipodi:docname="logo.svg"
+                        inkscape:export-filename="logo.svg" inkscape:export-xdpi="100" inkscape:export-ydpi="100"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                        <path style="stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                            d="m 23.61287,8.9715313 2.899561,6.1967767 c -2.471911,-1.341757 -5.500433,-1.683292 -8.187698,-1.307613 -2.687265,0.375679 -4.30269,1.827343 -5.033429,5.157153 -0.730739,3.32981 -0.33079,9.510887 0.937521,12.637711 1.268311,3.126824 3.077816,3.902788 5.583934,4.278747 2.506118,0.375959 5.091865,0.329247 7.635804,0.25039 L 26.368304,28.520585 H 21.611488 V 24.1798 h 9.117549 l 7.397597,15.809723 H 14.031367 C 12.26764,39.116344 10.874672,37.62111 10.137993,35.793351 8.4043995,35.411147 6.4350757,35.407412 4.8356984,35.272971 3.2363211,35.13853 2.0844958,34.086326 3.3733405,32.848777 4.1337041,31.283386 1.3480444,29.96405 3.1558011,28.876432 1.6574434,28.412469 2.026309,27.111607 2.9418041,26.385769 2.3175477,25.226884 -0.47226046,24.883932 0.06933274,23.126774 1.9284825,22.523321 3.7447229,21.650245 5.1519572,20.05285 6.5591915,18.455455 7.0811926,16.263324 8.4484889,14.66063 9.7934058,13.084168 11.2077,11.745675 13.175431,10.623017 15.143162,9.5003591 18.38433,9.1057246 20.16575,8.9926541 c 1.78142,-0.1130705 2.298091,-0.030636 3.44712,-0.021125 z"
+                            id="path650" sodipodi:nodetypes="cczzzzsssssssszsssszazzcc" />
+                        <path id="path701"
+                            style="stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                            d="M 40.512912,0 36.933286,13.998629 34.721018,8.9715454 H 26.131361 L 39.780657,39.98929 h 3.51193 L 56.941884,8.9715454 H 48.321221 L 46.731654,12.583728 43.383021,0 Z m 1.030428,7.2538208 1.794723,6.7448082 h -3.519165 z m -2.023649,7.9142452 h 4.057117 l 0.805635,2.754871 -2.861324,6.501929 -2.763138,-6.279204 z" />
+                        <path id="path721"
+                            style="stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                            d="m 76.067331,8.9715314 c -5.535508,-0.019917 -11.071158,0.00846 -16.606738,1.4e-5 l -3.535702,7.5612956 h 9.96425 l -0.241252,4.200258 -10.021687,2e-6 -3.641122,7.787639 h 13.215214 l -0.242521,4.215426 c 0,0 -11.182726,0.0231 -16.624666,0.03444 l -3.375505,7.218681 c 9.704814,-0.01599 19.413707,0.118061 29.106649,-0.02096 4.50731,-0.06465 9.021217,-3.66827 9.297687,-8.367036 0.131218,-2.230125 -0.314035,-4.505009 -1.716733,-6.323983 -1.593675,-2.066626 -3.95414,-3.712583 -6.231996,-4.492148 -1.664037,-0.569494 -3.901942,-0.772144 -4.338763,-2.35952 -0.447829,-1.627378 1.610528,-2.734225 3.457859,-2.324884 1.847331,0.409341 3.767979,2.036148 3.767979,2.036148 l 4.061753,-4.285548 c 0,0 -0.775406,-1.10319 -1.916559,-2.279321 C 79.304326,10.395904 77.699685,9.1911062 76.067331,8.9715314 Z M 71.118796,27.03866 c 0,0 3.931951,1.232581 4.490285,2.930439 0.25959,0.789397 -0.161065,1.904718 -0.871597,2.335623 -0.525164,0.318488 -1.372178,0.360165 -2.075036,0.432542 -0.497965,0.05128 -1.501794,-0.0011 -1.501794,-0.0011 l -0.04186,-5.697506 z"
+                            sodipodi:nodetypes="cccccccccccssssszccsccassccc" />
+                    </svg>
+                </a>
             </div>
-
             <div class="login-right-head">
-                <strong style="color: #ff8a00;">خوش آمدید</strong>
+                <strong style="color: var(--cl-pr8);">خوش آمدید</strong>
                 <span>لطفا شماره موبایل خود را وارد کنید.</span>
             </div>
-
             <div class="form-wrapper">
-
-                <div class="form-title">ورود</div>
-
-                <form class="form-body" onsubmit="vali(event)">
+                <form class="form-body" onsubmit="isValid(event, this)">
                     <div class="phone-number-parent">
-                        <input type="tel" name="" id="" oninput="telCorrector(this, event)">
-                        <a href="#"><div>ورود با رمز عبور</div></a>
-                        <span class="phons-number-error"></span>
+                        <label for="phone">شماره موبایل:</label>
+                        <input type="tel" name="" id="phone" oninput="telCorrector(this, event)">
+<a href="./login_pass_page.html">ورود با رمز عبور</a>
+                        <span class="phone-number-error"></span>
                     </div>
                     <input type="submit" value="ورود">
-
                 </form>
             </div>
-
         </div>
+
     </div>
 
 

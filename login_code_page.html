@@ -41,11 +41,34 @@
 
         });
 
+        function codeCorrector(el, ev) {
+            persianNumbers = {
+                '۰': '0',
+                '۱': '1',
+                '۲': '2',
+                '۳': '3',
+                '۴': '4',
+                '۵': '5',
+                '۶': '6',
+                '۷': '7',
+                '۸': '8',
+                '۹': '9'
+            };
+            if (ev.data in persianNumbers) {
+                el.value = el.value.slice(0, -1) + persianNumbers[ev.data];
+            }
+            if (Number.isNaN(el.value[el.value.length - 1] * 1)) {
+                el.value = el.value.slice(0, -1);
+            }
+            if (el.value.length == 5) { el.value = el.value.slice(0, -1); }
+
+        }
+
         function isValid(ev, el) {
-            pass = ev.target[0].value;
+            codeNumber = ev.target[0].value;
             ev.preventDefault();
-            if (pass === '') {
-                invalidPhoneNumber('');
+            if (codeNumber.length !== 4) {
+                invalidPhoneNumber(codeNumber);
                 return true
             }
             el.submit()
@@ -54,6 +77,8 @@
         function invalidPhoneNumber(invalidNumber) {
             if (invalidNumber === '') {
                 showTooltip('پر کردن این بخش الزامیست.');
+            } else {
+                showTooltip('لطفا ارقام وارد شده را دوباره چک کنید.');
             }
 
 
@@ -136,13 +161,16 @@
                 </a>
             </div>
             <div class="login-right-head">
-                <span>لطفا رمز عبور حساب خود را وارد کنید.</span>
+                <span>لطفا کد پیامک شده را وارد کنید.</span>
             </div>
             <div class="form-wrapper">
                 <form class="form-body" onsubmit="isValid(event, this)">
                     <div class="phone-number-parent">
-                        <label for="phone">رمز عبور:</label>
-                        <input type="password" name="#" >
+                        <label for="phone">کد ارسالی:</label>
+                        <input type="text" name="" id="phone" oninput="codeCorrector(this, event)" autocomplete="off">
+                        <a href="./login_pass_page.html">
+                            <div>ورود با رمز عبور</div>
+                        </a>
                         <span class="error-tooltip"></span>
                     </div>
                     <input type="submit" value="تایید">

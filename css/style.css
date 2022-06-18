@@ -1,4 +1,41 @@
 /* loading area animation */
+:root {
+  --bg-color: radial-gradient(circle at center, #fff, #ccc);
+  /* primary palette */
+  --cl-pr0: #99e2b4;
+  --cl-pr1: #88d4ab;
+  --cl-pr2: #78c6a3;
+  --cl-pr3: #67b99a;
+  --cl-pr4: #56ab91;
+  --cl-pr5: #469d89;
+  --cl-pr6: #358f80;
+  --cl-pr7: #248277;
+  --cl-pr8: #14746f;
+  --cl-pr9: #036666;
+  /* secondary palette */
+  --cl-se0: #fee000;
+  --cl-se1: #fed000;
+  --cl-se2: #fec000;
+  --cl-se3: #feb000;
+  --cl-se4: #fea000;
+  /* shades of gray */
+  --cl-gr0: #c5c5c5;
+  --cl-gr1: #b1b1b1;
+  --cl-gr2: #9e9e9e;
+  --cl-gr3: #8a8a8a;
+  --cl-gr4: #777777;
+  --cl-gr5: #505050;
+  --cl-gr6: #3c3c3c;
+  --cl-gr7: #3c3c3c;
+  --cl-gr8: #292929;
+  --cl-gr9: #1f1f1f;
+  --cl-w: #fff;
+  --cl-b: #000;
+}
+
+body {
+  background: var(--cl-w);
+}
 
 .loading-area {
   background-color: white;
@@ -10,20 +47,6 @@
   height: 100vh;
   z-index: 5;
   transition: all linear 500ms;
-}
-:root {
-  --bg-color: radial-gradient(circle at center, #fff, #ccc);
-  --dot-color1:deepskyblue;
-  --dot-color2:#000;
-}
-
-body {
-  background: var(--bg-color);
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .dna {
@@ -38,16 +61,17 @@ body {
   height: 70px;
   float: left;
   margin: 0 8px;
-  border-left: 1px #B0B0B0 dashed;
+  border-left: 1px #b0b0b0 dashed;
   position: relative;
   transform: rotateX(-360deg);
   animation: run 2s linear infinite;
 }
-.ele:before, .ele:after {
-  content: "";
+.ele:before,
+.ele:after {
+  content: '';
   width: 10px;
   height: 10px;
-  background: var(--dot-color1);
+  background: var(--cl-pr8);
   border-radius: 50%;
   position: absolute;
   left: 50%;
@@ -55,7 +79,7 @@ body {
 }
 .ele:before {
   top: -2px;
-  background: var(--dot-color2);
+  background: var(--cl-gr2);
 }
 .ele:after {
   bottom: -2px;
@@ -198,7 +222,6 @@ h4 {
 }
 
 .page-wraper {
-  width: 100vw;
   overflow-x: hidden;
 }
 
@@ -211,7 +234,7 @@ h4 {
 /* Animated menu toggler mechanism */
 header {
   font-family: faraz, nazanin, baran;
-  padding: 0.75rem;
+  padding: 0.75rem 0 0;
   background-color: transparent;
   position: fixed;
   width: 100%;
@@ -223,7 +246,7 @@ header {
 }
 header.scrolldown {
   backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(139, 139, 139, 0.1);
 }
 
 svg circle,
@@ -231,10 +254,19 @@ svg path {
   transition: stroke ease 500ms, fill ease 500ms;
 }
 
+header circle,
+header path {
+  transition: fill linear 500ms;
+  stroke: var(--cl-pr9);
+  fill: rgba(139, 139, 139, 0.1);
+  stroke-width: 2;
+}
+
 header.scrolldown circle,
 header.scrolldown path {
-  stroke: #ff8a00 !important;
-  fill: #e9e9e900 !important;
+  stroke-opacity: 0.7;
+  stroke: var(--cl-w);
+  fill: var(--cl-pr9);
 }
 
 #toggler {
@@ -245,12 +277,12 @@ header.scrolldown path {
   margin: 5px;
   width: 22px;
   height: 3px;
-  background-color: white;
+  background-color: var(--cl-pr9);
   transition: transform 1s, opacity 1s, background-color 500ms;
 }
 
 header.scrolldown .icon-bar {
-  background-color: #2c6c5e;
+  background-color: var(--cl-pr9);
 }
 
 .tog:checked + ul {
@@ -273,7 +305,7 @@ header.scrolldown .icon-bar {
   left: -80vw;
   width: 80vw;
   height: 100vh;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   border-left: 1px solid #e9e9e9;
   border-right: 1px solid #e9e9e9;
   text-align: right;
@@ -286,12 +318,13 @@ header.scrolldown .icon-bar {
   padding: 3vh 3vw;
   border-top: 1px solid #e9e9e9;
   font-size: 1.7rem;
+  color: var(--cl-gr5);
 }
 
 /* Current page link color */
 .menu .current-menu-item,
 .menu > *:hover {
-  color: #ff8a00;
+  color: var(--cl-pr7);
 }
 
 .sign-in {
@@ -302,11 +335,18 @@ header.scrolldown .icon-bar {
 }
 
 .logo-header {
+  margin: 10px;
   width: 40px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.logo-pic {
+  height: 5rem;
+}
+
 
 /********** Header end **********/
 
@@ -316,6 +356,13 @@ footer {
   background-color: #d2e7e2;
   border-top: 1px solid #647772;
   padding: 1em;
+}
+
+.footer-row {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .footer-top {
@@ -447,4 +494,108 @@ h4 {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+}
+
+/* date box */
+.parent-of-date-picker > .date-picker {
+  display: none;
+}
+
+/* date box (focused) */
+.parent-of-date-picker > input:focus + .date-picker {
+  font-size: 50px;
+  box-sizing: border-box;
+  min-width: 10em;
+  display: inline-block;
+  border-radius: 0.625em;
+  overflow: hidden;
+  font-family: faraz;
+  direction: rtl;
+  text-align: center;
+  box-shadow: 0 0 0.0625em 0.0125em rgba(0, 0, 0, 0.377);
+  z-index: 10;
+}
+
+/* status and weekdays section */
+.parent-of-date-picker > div > div:first-child {
+  color: #012c32;
+}
+
+/* status section */
+.parent-of-date-picker > div > div:first-child > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #012c32;
+  box-shadow: 0 0.5px 0.1px rgba(1, 22, 25, 0.5215686275);
+  border-bottom-left-radius: 0.5px;
+  border-bottom-right-radius: 0.5px;
+  font-size: 0.8em;
+  background-image: linear-gradient(to right, #016170, #009393);
+}
+
+/* status section children */
+.parent-of-date-picker > div > div:first-child > div:first-child {
+  padding: 0 0.5em;
+  height: 1.6em;
+}
+
+/* weekday section */
+.parent-of-date-picker > div > div:first-child > div:last-child {
+  line-height: 1.5em;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  font-weight: 500;
+  color: #012c32;
+}
+
+/* weekday section children */
+.parent-of-date-picker > div > div:first-child > div:last-child > div {
+  transform: scale(1.3);
+  font-size: 0.7em;
+  color: #012c32;
+}
+
+/* dates section */
+.parent-of-date-picker > div > div:last-child {
+  color: #012c32;
+}
+
+/* date rows */
+.parent-of-date-picker > div > div:last-child > div {
+  margin-bottom: 0.09em;
+  display: flex;
+  justify-content: space-around;
+  color: #012c32;
+}
+
+/* date rows children (Default ones) */
+.parent-of-date-picker > div > div:last-child > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.3em;
+  width: 1.3em;
+  font-size: 0.6em;
+  /* opacity: 0.1; */
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+/* today style */
+.parent-of-date-picker .today {
+  box-shadow: inset 0 0 0.03125em 0.0375em #012c32;
+}
+
+/* choosed day style */
+.parent-of-date-picker .choosed {
+  background-color: #089c8b;
+  background-image: linear-gradient(to right, #016170, #009393);
+}
+
+/* allowed day style */
+.parent-of-date-picker .allowed {
+  opacity: 1 !important;
 }

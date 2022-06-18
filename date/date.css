@@ -1,9 +1,4 @@
-/* parent class */
-/* Pallet */
-@font-face {
-  font-family: faraz;
-  src: url(fonts/B_Nazanin.ttf);
-}
+
 /* date box */
 .parent-of-date-picker > .date-picker {
   display: none;
