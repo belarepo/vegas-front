@@ -1,0 +1,84 @@
+.page-content {
+  display: grid;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+}
+
+.form-box {
+  margin: 6rem auto;
+  border: 2px solid var(--cl-pr9);
+  border-radius: 1rem;
+  width: 90%;
+  padding: 0.5rem;
+}
+
+.facial-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.facial-form > * {
+  margin: 0.5rem;
+}
+
+.form-box input[type='submit'] {
+  font-family: nazanin;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  background-color: var(--cl-pr8);
+  border: none;
+}
+.form-box select {
+  width: 100%;
+  text-align: right;
+  font-family: nazanin;
+  font-size: 1.5rem;
+  padding-right: 1.5rem;
+  height: 100%;
+  border-radius: 0.2rem;
+  background-color: var(--cl-pr5);
+  border: none;
+}
+
+.select-part {
+  position: relative;
+  line-height: normal;
+}
+
+.select-part .decor {
+  pointer-events: none;
+  position: absolute;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1.5rem;
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+  background-color: var(--cl-pr1);
+}
+.select-part .decor span {
+  margin: auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-bottom: 0.1rem solid var(--cl-pr8);
+  border-right: 0.1rem solid var(--cl-pr8);
+  transform: rotate(45deg);
+}
+
+@media only screen and (min-width: 400px) {
+  .facial-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+
+.select-part {
+  max-width: 80%;
+
+}
+}

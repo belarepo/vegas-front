@@ -6,10 +6,6 @@
 
     <!-- META -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="#" />
-    <meta name="author" content="#" />
-    <meta name="robots" content="#" />
     <meta name="description" content="#" />
 
     <!-- FAVICON ICON -->
@@ -18,40 +14,42 @@
     <!-- PAGE TITLE HERE -->
     <title>مرکز لیزر و زیبایی وگاس</title>
 
-    <!-- NORMALIZE STYLE SHEET -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- MOBILE SPECIFIC -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- MAIN STYLE SHEET -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
 
-    <!-- JAVASCRIPT  FILES -->
-    <!-- <script src="js/jquery-3.6.0.min.js" defer></script> -->
 
     <script>
         window.addEventListener("load", function fader() {
             const load = document.getElementById('loading-area');
             load.style.opacity = '0';
             load.style.pointerEvents = 'none';
-
+            //alert box script
+            const alertBox = document.querySelector('.alert-box');
+            if (alertBox.innerHTML) {
+                alertBox.style.minHeight = '5rem';
+                alertBox.style.padding = '1rem';
+                alertBox.style.borderStyle = 'solid';
+            }
         });
 
+
+
         function isValid(ev, el) {
-            pass = ev.target[0].value;
+            const pass = ev.target[0].value;
             ev.preventDefault();
-            if (pass === '') {
-                invalidPhoneNumber('');
+            if (pass == ''){
+                invalidPass(pass);
                 return true
             }
             el.submit()
         }
 
-        function invalidPhoneNumber(invalidNumber) {
+        function invalidPass(invalidNumber) {
             if (invalidNumber === '') {
                 showTooltip('پر کردن این بخش الزامیست.');
             }
@@ -60,8 +58,8 @@
         }
 
         function showTooltip(msg) {
-            const tooltip = document.querySelector('.error-tooltip');
-            tooltip.innerHTML = '<br>' + msg;
+            const tooltip = document.querySelector('.pass-error');
+            tooltip.innerHTML = msg;
             tooltip.classList.remove('on');
             requestAnimationFrame(() => {
                 tooltip.classList.add('on');
@@ -102,7 +100,9 @@
     </div>
     <!-- LOADING AREA  END ====== -->
 
-
+    <div style="position: relative;">
+        <div class="alert-box danger"></div>
+    </div>
 
     <div class="login-wrap">
 
@@ -136,16 +136,17 @@
                 </a>
             </div>
             <div class="login-right-head">
-                <span>لطفا رمز عبور حساب خود را وارد کنید.</span>
+                <strong style="color: var(--cl-pr8);">خوش آمدید</strong>
+                <span>لطفا شماره موبایل خود را وارد کنید.</span>
             </div>
             <div class="form-wrapper">
                 <form class="form-body" onsubmit="isValid(event, this)">
                     <div class="phone-number-parent">
-                        <label for="phone">رمز عبور:</label>
-                        <input type="password" name="#" >
-                        <span class="error-tooltip"></span>
+                        <label for="phone">رمز عبور</label>
+                        <input type="tel" name="" id="phone">
                     </div>
-                    <input type="submit" value="تایید">
+                    <span class="pass-error" style=""></span>
+                    <input type="submit" value="ورود">
                 </form>
             </div>
         </div>

@@ -24,17 +24,18 @@ class JalaliDate {
   };
 
   get dateString() {
+    //*****************************************************
     if (this._day == undefined || this._month || this._year) {
       return 'no date found';
     }
-    return this._day + '/' + this._month + '/' + this._year;
+    return this._year + '/' + this._month + '/' + this._day;
   }
 
   set dateString(date) {
     date = date.split('/');
-    this._day = date[0] * 1;
+    this._day = date[date[0] < 40 ? 0 : 2] * 1;
     this._month = date[1] * 1;
-    this._year = date[2] * 1;
+    this._year = date[date[2] > 40 ? 2 : 0] * 1;
   }
 
   get day() {
@@ -122,111 +123,106 @@ class JalaliDate {
 window.addEventListener('load', function () {
   // Get table
   const tb = document.querySelectorAll('.parent-of-date-picker');
-
   for (let i = 0; i < tb.length; i++) {
+    // cancel click
+    // tb[i].addEventListener('click', function (e) {e.preventDefault() });
+    // get date picker
+    const datePicker = tb[i].querySelector('.date-picker');
     // Get table cells
-      const td = tb[i].querySelectorAll('div > div:last-child > div > div');
-      console.log(td);
+    const td = tb[i].querySelectorAll(
+      '.date-picker > div:last-child > div > div'
+    );
+    // get status bar
+    const stat = tb[i].querySelectorAll('.status div')[1];
     // Initialize today obj
-    const todayDateString = tb
-      .querySelector('.date-box-header')
-      .getAttribute('data-today');
+    const todayDateString = tb[i].getAttribute('data-today');
     const today = new JalaliDate();
     today.dateString = todayDateString;
-    // Initialize tfoot choosed
-    const tfootChoosed = tb.querySelector('.choosed');
-    tfootChoosed.innerHTML = 'تاریخ: / / ';
     // Initialize showedMonth obj
     const showedMonth = new JalaliDate();
     showedMonth.dateString = todayDateString;
     showedMonth.day = 1;
-    // Initialize state header
-    stateHeader = tb.querySelector('.state-header');
     // Initialize choosedDate obj
     const choosedDate = new JalaliDate();
     choosedDate.dateString = '0/0/0';
     // Initialize allowed dates
-    allowedDates = new Set(
-      tb
-        .querySelector('.date-box-header')
-        .getAttribute('data-allowed-days')
-        .split(' ')
-    );
+    allowedDates = new Set(tb[i].getAttribute('data-allowed-dates').split(' '));
     function isAllowedDate(date) {
       return allowedDates.has(date);
     }
     // before and after
-    const afterButton = tb
-      .querySelector('.date-box-header .next-month')
+    const afterButton = tb[i]
+      .querySelector('.next-month')
       .addEventListener('click', () => {
         showedMonth.nextMonth();
         updateShowedMonth();
       });
-    const beforeButton = tb
-      .querySelector('.date-box-header .prev-month')
+    const beforeButton = tb[i]
+      .querySelector('.prev-month')
       .addEventListener('click', () => {
         showedMonth.prevMonth();
         updateShowedMonth();
       });
 
-    //
-    const dateField = tb.previousElementSibling;
+    // grab date field
+    const dateField = tb[i].querySelector('input');
 
-    //
-    const tfootButton = tb.querySelector('.tfoot-button');
-    tfootButton.addEventListener('click', () => {
-      dateField.value =
-        choosedDate.dateString == '0/0/0' ? '' : choosedDate.dateString;
-      tb.className = 'date-box';
-    });
     dateField.addEventListener('focus', () => {
-      tb.className = 'date-box on';
-      // showedMonth.dateString = todayDateString;
+      datePicker.classList.add('on');
       updateShowedMonth();
     });
-    updateShowedMonth();
+    // dateField.addEventListener('blur', (e) => {
+    //   e.target.focus();
+
+    // });
+
+    console.log(i);
 
     function updateShowedMonth() {
-      td.forEach((td) => {
-        td.className = '';
-      });
+      stat.innerHTML = showedMonth.year + ' ' + showedMonth.monthName();
       let dayCounter = 1;
-      for (
-        let i = showedMonth.weekday();
-        i < showedMonth.weekday() + showedMonth.monthLength();
-        i++
-      ) {
-        let day = dayCounter;
-        td[i].className = 'show';
-        td[i].innerHTML = day;
+      td.forEach((td, i) => {
+        td.classList.remove('allowed');
+        td.classList.remove('today');
+        td.innerHTML = '';
         if (
-          isAllowedDate(day + '/' + showedMonth.month + '/' + showedMonth.year)
+          i >= showedMonth.weekday() &&
+          dayCounter <= showedMonth.monthLength()
         ) {
-          td[i].className = 'allowed';
-          td[i].addEventListener('click', () => {
-            tfootChoosed.innerHTML =
-              'تاریخ: ' +
-              showedMonth.year +
-              '/' +
-              showedMonth.month +
-              '/' +
-              day;
-            choosedDate.dateString =
-              showedMonth.year + '/' + showedMonth.month + '/' + day;
-          });
-        }
-        if (
-          day + '/' + showedMonth.month + '/' + showedMonth.year ==
-            todayDateString &&
-          true
-        ) {
-          if (td[i].className.search('today') == -1) {
-            td[i].className += ' today';
+          td.innerHTML = dayCounter;
+          // add today class
+          if (
+            dayCounter == today.day &&
+            showedMonth.month == today.month &&
+            showedMonth.year == today.year
+          ) {
+            td.classList.add('today');
           }
+          // add allowed class
+          if (
+            allowedDates.has(
+              showedMonth.year + '/' + showedMonth.month + '/' + dayCounter
+            )
+          ) {
+            td.classList.add('allowed');
+            td.addEventListener('click', function (e) {
+              dateField.value =
+                showedMonth.year + '-' + showedMonth.month + '-' + td.innerHTML;
+              if (td.parentElement.parentElement.querySelector('.choosed')) {
+                td.parentElement
+                  .parentElement
+                  .querySelector('.choosed')
+                  .classList.remove('choosed');
+              }
+              td.classList.add('choosed');
+              setTimeout(function () {
+                datePicker.classList.remove('on');
+              }, 200);
+            });
+          }
+          dayCounter++;
         }
-        dayCounter++;
-      }
-      stateHeader.innerHTML = showedMonth.monthName() + ' ' + showedMonth.year;
+      });
     }
   }
 });

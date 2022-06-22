@@ -6,10 +6,6 @@
 
     <!-- META -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="#" />
-    <meta name="author" content="#" />
-    <meta name="robots" content="#" />
     <meta name="description" content="#" />
 
     <!-- FAVICON ICON -->
@@ -20,11 +16,6 @@
 
     <!-- MOBILE SPECIFIC -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- NORMALIZE STYLE SHEET -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- MAIN STYLE SHEET -->
     <link rel="stylesheet" href="css/style.css">
@@ -108,7 +99,15 @@
                 });
             });
 
-        });
+            // alert box
+            const alertBox = document.querySelector('.alert-box');
+            if (alertBox.innerHTML) {
+                alertBox.style.minHeight = '5rem';
+                alertBox.style.padding = '1rem';
+                alertBox.style.borderStyle = 'solid';
+            }
+        }); 
+
     </script>
 
 </head>
@@ -142,7 +141,6 @@
         </div>
     </div>
     <!-- LOADING AREA  END -->
-
     <div class="page-wraper">
 
         <!-- HEADER START -->
@@ -150,11 +148,10 @@
 
             <!--Sign in-->
             <div class="sign-in">
-                <a href="login-page.html">
+                <a href="login_page.html">
                     <svg width="32" height="32" viewBox="0 0 32 32">
 
-                        <circle cx="15.999998" cy="7.8676658"
-                            r="6.8291531" />
+                        <circle cx="15.999998" cy="7.8676658" r="6.8291531" />
                         <path
                             d="M 22.449573,16.283203 C 20.582895,17.611491 18.23101,18.332714 16,18.341797 c -2.23101,-0.0091 -4.582895,-0.730306 -6.449573,-2.058594 -3.3555067,0.897234 -5.7678125,3.841519 -5.7678125,7.357422 0,4.23278 0.811059,7.640625 6.5864195,7.640625 h 11.261932 c 5.775359,0 6.586419,-3.407845 6.586419,-7.640625 0,-3.515903 -2.412305,-6.460188 -5.767812,-7.357422 z" />
 
@@ -196,7 +193,9 @@
 
                     <li class="current-menu-item"><a href="index.html">خانه</a></li>
 
-                    <li><a href="./blog-grid.html">بلاگ</a></li>
+                    <li><a href="./reserve.html">رزرو</a></li>
+                    
+                    <li><a href="./blog_home.html">بلاگ</a></li>
 
                     <li><a href="#">درباره ما</a></li>
 
@@ -215,7 +214,8 @@
 
             </div>
             <!-- Menu bar end-->
-
+            <!-- Back-end alert box -->
+            <div class="alert-box "></div>
 
         </header>
         <!-- HEADER END -->
@@ -303,7 +303,7 @@
                 <!--Left Section-->
                 <div class="banner-left">
 
-                    <!-- <img src="images/banner/banner_pic.png" alt="" class="banner-pic" /> -->
+                    <img src="images/banner/banner_pic.png" alt="" class="banner-pic" />
                     <span class="star-1 animted-star">*</span>
                     <span class="star-2 animted-star">*</span>
                     <span class="star-3 animted-star">*</span>
@@ -704,7 +704,7 @@
                         </div>
                         <!-- Content section for blogs end -->
                     </div>
-                    
+
                     <!-- COLUMNS 6 -->
                     <div class="post-bx pad">
                         <!-- Content section for blogs start -->

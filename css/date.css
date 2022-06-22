@@ -1,21 +1,32 @@
+/* make main container relative positioned */
+.parent-of-date-picker {
+  position: relative;
+}
 
 /* date box */
 .parent-of-date-picker > .date-picker {
+  cursor: default;
   display: none;
+  position: relative;
 }
 
 /* date box (focused) */
-.parent-of-date-picker > input:focus + .date-picker {
-  font-size: 50px;
+.date-picker.on {
+  position: absolute;
+  left: 50%;
+  top: 1.5rem;
+  transform: translateX(-50%);
+  display: inline-block;
+  font-size: 2rem;
   box-sizing: border-box;
   min-width: 10em;
-  display: inline-block;
   border-radius: 0.625em;
   overflow: hidden;
   font-family: faraz;
   direction: rtl;
   text-align: center;
   box-shadow: 0 0 0.0625em 0.0125em rgba(0, 0, 0, 0.377);
+  background-color: white;
   z-index: 10;
 }
 
@@ -41,6 +52,12 @@
 .parent-of-date-picker > div > div:first-child > div:first-child {
   padding: 0 0.5em;
   height: 1.6em;
+}
+
+/* status section arrows */
+.parent-of-date-picker .next-month,
+.parent-of-date-picker .prev-month {
+  cursor: pointer;
 }
 
 /* weekday section */
@@ -75,13 +92,14 @@
 
 /* date rows children (Default ones) */
 .parent-of-date-picker > div > div:last-child > div > div {
+  cursor: not-allowed;
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1.3em;
   width: 1.3em;
   font-size: 0.6em;
-  /* opacity: 0.1; */
+  opacity: 0.5;
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
@@ -89,17 +107,19 @@
 
 /* today style */
 .parent-of-date-picker .today {
-  box-shadow: inset 0 0 0.03125em 0.0375em #012c32;
+  box-shadow: inset 0 0 0 .1em #012c32;
+  /* background-color: tomato; */
 }
 
 /* choosed day style */
-.parent-of-date-picker .choosed {
+.choosed {
   background-color: #089c8b;
   background-image: linear-gradient(to right, #016170, #009393);
 }
 
 /* allowed day style */
 .parent-of-date-picker .allowed {
+  cursor: pointer !important;
   opacity: 1 !important;
 }
 

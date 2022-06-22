@@ -6,10 +6,6 @@
 
     <!-- META -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="#" />
-    <meta name="author" content="#" />
-    <meta name="robots" content="#" />
     <meta name="description" content="#" />
 
     <!-- FAVICON ICON -->
@@ -18,27 +14,27 @@
     <!-- PAGE TITLE HERE -->
     <title>مرکز لیزر و زیبایی وگاس</title>
 
-    <!-- NORMALIZE STYLE SHEET -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- MOBILE SPECIFIC -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- MAIN STYLE SHEET -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
 
-    <!-- JAVASCRIPT  FILES -->
-    <!-- <script src="js/jquery-3.6.0.min.js" defer></script> -->
 
     <script>
         window.addEventListener("load", function fader() {
             const load = document.getElementById('loading-area');
             load.style.opacity = '0';
             load.style.pointerEvents = 'none';
-
+            //alert box script
+            const alertBox = document.querySelector('.alert-box');
+            if (alertBox.innerHTML) {
+                alertBox.style.minHeight = '5rem';
+                alertBox.style.padding = '1rem';
+                alertBox.style.borderStyle = 'solid';
+            }
         });
 
         function telCorrector(el, ev) {
@@ -60,18 +56,18 @@
             if (Number.isNaN(el.value[el.value.length - 1] * 1)) {
                 el.value = el.value.slice(0, -1);
             }
-            if (el.value.length == 12){ el.value = el.value.slice(0, -1); }
-            
+            if (el.value.length == 12) { el.value = el.value.slice(0, -1); }
+
         }
-        
+
         function isValid(ev, el) {
-            phoneNumber = ev.target[0].value;
+            const phoneNumber = ev.target[0].value;
             ev.preventDefault();
             if (!(((phoneNumber[0] === '0') && (phoneNumber[0] === '9') && (phoneNumber.length === 11)) || (phoneNumber[0] === '9' && phoneNumber.length === 10))) {
                 invalidPhoneNumber(phoneNumber);
                 return true
             }
-            if (phoneNumber[0] === '9') { ev.target[0].value = '0' + phoneNumber;}
+            if (phoneNumber[0] === '9') { ev.target[0].value = '0' + phoneNumber; }
             el.submit()
         }
 
@@ -79,7 +75,7 @@
             if (invalidNumber === '') {
                 showTooltip('پر کردن این بخش الزامیست.');
             } else {
-                showTooltip('لطفا ارقام وارد شده را دوباره چک کنید.');
+                showTooltip('لطفا ارقام وارد شده را دوباره بررسی کنید.');
             }
 
 
@@ -87,7 +83,7 @@
 
         function showTooltip(msg) {
             const tooltip = document.querySelector('.phone-number-error');
-            tooltip.innerHTML = '<br>' + msg;
+            tooltip.innerHTML = msg;
             tooltip.classList.remove('on');
             requestAnimationFrame(() => {
                 tooltip.classList.add('on');
@@ -128,7 +124,9 @@
     </div>
     <!-- LOADING AREA  END ====== -->
 
-
+    <div style="position: relative;">
+        <div class="alert-box danger"></div>
+    </div>
 
     <div class="login-wrap">
 
@@ -166,13 +164,13 @@
                 <span>لطفا شماره موبایل خود را وارد کنید.</span>
             </div>
             <div class="form-wrapper">
-                <form class="form-body" onsubmit="isValid(event, this)">
+                <form class="form-body" onsubmit="isValid(event, this)"
+                    style="display: flex;flex-direction:column;align-items:center;">
                     <div class="phone-number-parent">
-                        <label for="phone">شماره موبایل:</label>
+                        <label for="phone">شماره موبایل</label>
                         <input type="tel" name="" id="phone" oninput="telCorrector(this, event)">
-<a href="./login_pass_page.html">ورود با رمز عبور</a>
-                        <span class="phone-number-error"></span>
                     </div>
+                    <span class="phone-number-error"></span>
                     <input type="submit" value="ورود">
                 </form>
             </div>

@@ -1,3 +1,151 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+main {
+  display: block;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+a {
+  background-color: transparent;
+}
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+img {
+  border-style: none;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+button,
+input {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+[type='button'],
+[type='reset'],
+[type='submit'],
+button {
+  -webkit-appearance: button;
+}
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner,
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring,
+button:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+progress {
+  vertical-align: baseline;
+}
+textarea {
+  overflow: auto;
+}
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+[type='search'] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+details {
+  display: block;
+}
+summary {
+  display: list-item;
+}
+template {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
+/* normalize.css end */
 /* loading area animation */
 :root {
   --bg-color: radial-gradient(circle at center, #fff, #ccc);
@@ -33,8 +181,12 @@
   --cl-b: #000;
 }
 
-body {
-  background: var(--cl-w);
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .loading-area {
@@ -181,24 +333,7 @@ a:active {
   color: inherit;
 }
 html,
-body,
-header,
-button,
-img,
-div,
-a,
-ul,
-li,
-h1,
-h2,
-h3,
-h4,
-h5 {
-  line-height: 1.5;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  border: none;
+body {
   scroll-behavior: smooth;
 }
 
@@ -243,6 +378,45 @@ header {
   justify-content: space-between;
   transition: all ease 500ms;
   z-index: 4;
+}
+.alert-box.success {
+  
+  border: #358f80  1px;
+  background-color: #358f80bd;
+  color: rgb(0, 70, 70);
+
+}
+.alert-box.danger {
+  
+  border: #ff1000  1px;
+  background-color: #ff1000bd;
+  color: rgb(110, 0, 0);
+}
+
+.alert-box {
+  border: #1d1d1d  1px;
+  background-color: #727272bd;
+  color: rgb(44, 44, 44);
+  font-family: nazanin;
+  text-align: right;
+  direction: rtl;
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  width: 10rem;
+  border-radius: 1rem;
+  animation-name: hider;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+@keyframes hider {
+  to {
+    opacity: 0;
+  }
 }
 header.scrolldown {
   backdrop-filter: blur(10px);
@@ -315,7 +489,7 @@ header.scrolldown .icon-bar {
 }
 
 .menu li {
-  padding: 3vh 3vw;
+  padding: 0.4rem 3vw;
   border-top: 1px solid #e9e9e9;
   font-size: 1.7rem;
   color: var(--cl-gr5);
@@ -346,7 +520,6 @@ header.scrolldown .icon-bar {
 .logo-pic {
   height: 5rem;
 }
-
 
 /********** Header end **********/
 
@@ -494,108 +667,4 @@ h4 {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-}
-
-/* date box */
-.parent-of-date-picker > .date-picker {
-  display: none;
-}
-
-/* date box (focused) */
-.parent-of-date-picker > input:focus + .date-picker {
-  font-size: 50px;
-  box-sizing: border-box;
-  min-width: 10em;
-  display: inline-block;
-  border-radius: 0.625em;
-  overflow: hidden;
-  font-family: faraz;
-  direction: rtl;
-  text-align: center;
-  box-shadow: 0 0 0.0625em 0.0125em rgba(0, 0, 0, 0.377);
-  z-index: 10;
-}
-
-/* status and weekdays section */
-.parent-of-date-picker > div > div:first-child {
-  color: #012c32;
-}
-
-/* status section */
-.parent-of-date-picker > div > div:first-child > div:first-child {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #012c32;
-  box-shadow: 0 0.5px 0.1px rgba(1, 22, 25, 0.5215686275);
-  border-bottom-left-radius: 0.5px;
-  border-bottom-right-radius: 0.5px;
-  font-size: 0.8em;
-  background-image: linear-gradient(to right, #016170, #009393);
-}
-
-/* status section children */
-.parent-of-date-picker > div > div:first-child > div:first-child {
-  padding: 0 0.5em;
-  height: 1.6em;
-}
-
-/* weekday section */
-.parent-of-date-picker > div > div:first-child > div:last-child {
-  line-height: 1.5em;
-  display: flex;
-  text-align: center;
-  justify-content: space-around;
-  font-weight: 500;
-  color: #012c32;
-}
-
-/* weekday section children */
-.parent-of-date-picker > div > div:first-child > div:last-child > div {
-  transform: scale(1.3);
-  font-size: 0.7em;
-  color: #012c32;
-}
-
-/* dates section */
-.parent-of-date-picker > div > div:last-child {
-  color: #012c32;
-}
-
-/* date rows */
-.parent-of-date-picker > div > div:last-child > div {
-  margin-bottom: 0.09em;
-  display: flex;
-  justify-content: space-around;
-  color: #012c32;
-}
-
-/* date rows children (Default ones) */
-.parent-of-date-picker > div > div:last-child > div > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1.3em;
-  width: 1.3em;
-  font-size: 0.6em;
-  /* opacity: 0.1; */
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-}
-
-/* today style */
-.parent-of-date-picker .today {
-  box-shadow: inset 0 0 0.03125em 0.0375em #012c32;
-}
-
-/* choosed day style */
-.parent-of-date-picker .choosed {
-  background-color: #089c8b;
-  background-image: linear-gradient(to right, #016170, #009393);
-}
-
-/* allowed day style */
-.parent-of-date-picker .allowed {
-  opacity: 1 !important;
 }

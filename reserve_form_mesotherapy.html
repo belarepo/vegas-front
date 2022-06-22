@@ -29,8 +29,11 @@
     <!-- MAIN STYLE SHEET -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- HOMEPAGE STYLE SHEET -->
-    <link rel="stylesheet" href="css/homepage.css">
+    <!-- reserve STYLE SHEET -->
+    <link rel="stylesheet" href="css/reserve.css">
+
+    <!-- date STYLE SHEET -->
+    <link rel="stylesheet" href="css/date.css">
 
     <!-- JAVASCRIPT -->
     <script>
@@ -65,51 +68,11 @@
                     scroller.classList.toggle('scrolldown');
                 }
             });
-
-            // carousel mechanisms
-            var carousel = document.querySelector('.carousel'),
-                items = document.querySelectorAll('.carousel-item'),
-                currdeg = 0;
-
-            const nex = document.querySelector('.next');
-            nex.addEventListener('click', rotate);
-            const pre = document.querySelector('.prev');
-            pre.addEventListener('click', rotate);
-
-            function rotate() {
-                if (this.className == "next") {
-                    currdeg = currdeg - 60;
-                }
-                if (this.className == "prev") {
-                    currdeg = currdeg + 60;
-                }
-                carousel.style.transform = "rotateY(" + currdeg + "deg)";
-                carousel.style.webkitTransform = "rotateY(" + currdeg + "deg)";
-                carousel.style.mozTransform = "rotateY(" + currdeg + "deg)";
-                carousel.style.oTransform = "rotateY(" + currdeg + "deg)";
-                items.forEach((el) => {
-                    el.style.transform = "rotateY(" + (-currdeg) + "deg)";
-                    el.style.webkitTransform = "rotateY(" + (-currdeg) + "deg)";
-                    el.style.mozTransform = "rotateY(" + (-currdeg) + "deg)";
-                    el.style.oTransform = "rotateY(" + (-currdeg) + "deg)";
-                });
-            }
-
-            let dd = setInterval(() => {
-                nex.click();
-            }, 2000);
-
-            items.forEach((el) => {
-                el.addEventListener('mouseover', () => { clearInterval(dd); console.log('hj') });
-                el.addEventListener('mouseout', () => {
-                    dd = setInterval(() => {
-                        nex.click();
-                    }, 2000);
-                });
-            });
+            function isValid(e, el) { }
 
         });
     </script>
+    <script src="js/date.js"></script>
 
 </head>
 
@@ -218,79 +181,101 @@
 
         </header>
         <!-- HEADER END -->
-        <div class="cards-container">
-            <a href="">
-                <div class="card-item">
-                    <img src="images/samples/pic2.jpg" alt="">
-                    <h2>inpiugrnpiugni</h2>
-                </div>
-            </a>
-            <a href="">
-                <div class="card-item">
-                    <img src="images/samples/pic2.jpg" alt="">
-                    <h2>inpiugrnpiugni</h2>
-                </div>
-            </a>
-            <a href="">
-                <div class="card-item">
-                    <img src="images/samples/pic2.jpg" alt="">
-                    <h2>inpiugrnpiugni</h2>
-                </div>
-            </a>
-            <a href="">
-                <div class="card-item">
-                    <img src="images/samples/pic2.jpg" alt="">
-                    <h2>inpiugrnpiugni</h2>
-                </div>
-            </a>
-            <a href="">
-                <div class="card-item">
-                    <img src="images/samples/pic2.jpg" alt="">
-                    <h2>inpiugrnpiugni</h2>
-                </div>
-            </a>
-            <a href="">
-                <div class="card-item">
-                    <img src="images/samples/pic2.jpg" alt="">
-                    <h2>inpiugrnpiugni</h2>
-                </div>
-            </a>
+        <!-- CONTENT START -->
+        <div class="page-content">
+            <div class="form-box">
+                <form action="" method="post" class="facial-form" onsubmit="isValid(event, this)">
+
+                    <div class="parent-of-date-picker" data-today="1402/7/5" data-allowed-dates="1402/7/2 1402/7/7 1402/7/9">
+                        <input type="text" placeholder="انتخاب تاریخ" readonly >
+                        <div class="date-picker">
+                            <div class="status-and-weekdays">
+                                <div class="status">
+                                    <div class="next-month">&lt;</div>
+                                    <div></div>
+                                    <div class="prev-month">&gt;</div>
+                                </div>
+                                <div>
+                                    <div>ش</div>
+                                    <div>ی</div>
+                                    <div>د</div>
+                                    <div>س</div>
+                                    <div>چ</div>
+                                    <div>پ</div>
+                                    <div>ج</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="select-part">
+                        <select name="part" id="">
+                            <option value="" disabled selected hidden>انتخاب ناحیه</option>
+                            <option value="">222</option>
+                            <option value="">333</option>
+                        </select>
+                        <div class="decor"><span></span></div>
+                    </div>
+                    <input type="submit" value="تایید">
+                </form>
+            </div>
         </div>
-
-        <style>
-            .cards-container {
-                margin: 200px 7vmin;
-                display: grid;
-                row-gap: 50px;
-                column-gap: 5px;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            }
-
-            .card-item {
-                text-align: center;
-            }
-        </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <!-- CONTENT END -->
 
         <!-- FOOTER START -->
         <footer>
@@ -353,6 +338,11 @@
 
         </footer>
         <!-- FOOTER END -->
+
+        <!-- BUTTON GO TOP -->
+        <a href="#top-of-page">
+            <div class="scrolltop"></div>
+        </a>
 
     </div>
 
