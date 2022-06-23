@@ -1,14 +1,14 @@
+header circle,
+header path {
+  stroke: var(--cl-w);
+  fill: rgba(139, 139, 139, 0.1);
+}
+
 .banner {
   min-height: 20rem;
   color: #fea000;
-  background: rgb(1, 22, 25);
-  background: linear-gradient(
-    0deg,
-    rgba(1, 22, 25, 0) 0%,
-    rgba(3, 102, 102, 1) 10%,
-    rgba(3, 102, 102, 1) 25%,
-    rgba(0, 147, 147, 0) 100%
-  );
+  background: hsl(180, 94%, 5%);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,10 +28,10 @@ article {
 article li {
   padding: 120px 20px 0 7px;
   position: relative;
-  border-radius: 1rem;
+  border-radius: .5rem;
   min-height: 300px;
-  border: solid 4px var(--cl-gr4);
-  margin-bottom: 110px;
+  border: solid 1px var(--cl-gr4);
+  margin: 55px 0;
 }
 
 article li:last-child {
@@ -71,8 +71,8 @@ side div:last-child {
 side > div {
   padding: 0.5rem;
   margin-bottom: 2rem;
-  border: solid 3px var(--cl-gr7);
-  border-radius: 1rem;
+  border: solid 1px var(--cl-gr7);
+  border-radius: .2rem;
   text-align: center;
   align-self: start;
 }
@@ -93,4 +93,8 @@ side > div h2 {
   side div:last-child {
     display: block;
   }
+
+  article li {
+  margin: 0 0 60px;
+}
 }
