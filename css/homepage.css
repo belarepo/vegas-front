@@ -131,6 +131,7 @@
 /********** working area **********/
 
 .working-area {
+  direction: rtl;
   background-color: transparent;
   padding: 30px 10px 0;
   display: flex;
@@ -232,7 +233,12 @@
 
 /********** samples section **********/
 
+.samples-section {
+  margin: 0 0 5rem;
+}
+
 .samples-section-head {
+  margin: 0 0 5rem;
   padding: 3em 1.5em 1.5em;
   background-color: white;
   text-align: center;
@@ -254,8 +260,8 @@
 }
 .container {
   margin: 0 auto;
-  width: 250px;
-  height: 200px;
+  width: 205px;
+  height: 365px;
   position: relative;
   perspective: 1000px;
 }
@@ -275,13 +281,12 @@
   display: block;
   position: absolute;
   background: #000;
-  width: 250px;
-  height: 200px;
-  line-height: 200px;
+  width: 205px;
+  height: 365px;
+  line-height: 365px;
   font-size: 5em;
   text-align: center;
   color: #fff;
-  opacity: 0.95;
   border-radius: 10px;
   background-size: cover;
   transition: transform 1s;

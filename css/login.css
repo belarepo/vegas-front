@@ -49,7 +49,13 @@
   text-align: right;
 }
 
-.phone-number-error {
+.phone-number-error,
+.consent-des-error,
+.name-error,
+.pass1-error,
+.pass2-error,
+.code-melli-error,
+.consent-mob-error {
   margin: 0 auto 0.5rem;
   color: #fe8000;
   font-weight: 600;
@@ -57,7 +63,7 @@
 
 .pass-error,
 .error-tooltip {
-  margin: 0 auto ;
+  margin: 0 auto;
   color: #fe8000;
   font-weight: 600;
 }

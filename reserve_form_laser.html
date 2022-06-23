@@ -6,11 +6,8 @@
 
     <!-- META -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="#" />
-    <meta name="author" content="#" />
-    <meta name="robots" content="#" />
-    <meta name="description" content="#" />
+    <meta name="description"
+        content="کلینیک زیبایی وگاس واقع در میدان استقلال پرند اماده ارائه خدمات زیبایی نظیر لیزر مو های زائد تزریق بوتاکس و ژل  مزوتوراپی میباشد" />
 
     <!-- FAVICON ICON -->
     <link rel="icon" type="image/png" href="images/favicon.png" />
@@ -19,12 +16,7 @@
     <title>مرکز لیزر و زیبایی وگاس</title>
 
     <!-- MOBILE SPECIFIC -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- NORMALIZE STYLE SHEET -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- MAIN STYLE SHEET -->
     <link rel="stylesheet" href="css/style.css">
@@ -35,44 +27,7 @@
     <!-- date STYLE SHEET -->
     <link rel="stylesheet" href="css/date.css">
 
-    <!-- JAVASCRIPT -->
-    <script>
-        window.addEventListener('load', function () {
-            // loading area hiding
-            loadingDNA = document.querySelector('.loading-area');
-            loadingDNA.style.opacity = '0';
-            loadingDNA.style.pointerEvents = 'none';
 
-            // header scroll efects
-            const header = document.querySelector('header');
-            const menu = document.querySelector('.menu');
-            const scroller = document.querySelector('.scrolltop');
-            document.scrollingElement.scrollTop = 0;
-            const shouldIToggle = (function () {
-                let visible = false;
-                return function (scroll) {
-                    if ((scroll > 50 && !visible) || (scroll < 50 && visible)) {
-                        visible = !visible;
-                        return true;
-                    }
-
-                    return false;
-                };
-            })();
-
-            document.addEventListener('scroll', function () {
-                const scrollTop = (this.scrollingElement.scrollTop);
-                if (shouldIToggle(scrollTop)) {
-                    header.classList.toggle('scrolldown');
-                    menu.classList.toggle('scrolldown');
-                    scroller.classList.toggle('scrolldown');
-                }
-            });
-            function isValid(e, el) { }
-
-        });
-    </script>
-    <script src="js/date.js"></script>
 
 </head>
 
@@ -107,13 +62,12 @@
     <!-- LOADING AREA  END -->
 
     <div class="page-wraper">
-
         <!-- HEADER START -->
         <header>
 
             <!--Sign in-->
             <div class="sign-in">
-                <a href="login-page.html">
+                <a href="login_page.html">
                     <svg width="32" height="32" viewBox="0 0 32 32">
 
                         <circle cx="15.999998" cy="7.8676658" r="6.8291531" />
@@ -156,13 +110,15 @@
 
                 <ul class="menu">
 
-                    <li class="current-menu-item"><a href="index.html">خانه</a></li>
+                    <li><a href="index.html">خانه</a></li>
 
-                    <li><a href="./blog-grid.html">بلاگ</a></li>
+                    <li class="current-menu-item"><a href="./reserve.html">رزرو</a></li>
 
-                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="./blog_home.html">بلاگ</a></li>
 
-                    <li id="contact-us"><a href="#site-footer">تماس با ما</a></li>
+                    <li><a href="./about_us.html">درباره ما</a></li>
+
+                    <li><a href="#contact-us">تماس با ما</a></li>
 
                 </ul>
 
@@ -177,10 +133,25 @@
 
             </div>
             <!-- Menu bar end-->
-
+            <!-- Back-end alert box -->
+            <div class="alert-box "></div>
 
         </header>
         <!-- HEADER END -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- CONTENT START -->
         <div class="page-content">
             <div class="form-box">
@@ -188,7 +159,7 @@
 
                     <div class="parent-of-date-picker" data-today="1402/7/5"
                         data-allowed-dates="1402/7/2 1402/7/7 1402/7/9">
-                        <input type="text" placeholder="انتخاب تاریخ" readonly>
+                        <input type="text" value="انتخاب تاریخ" readonly>
                         <div class="date-picker">
                             <div class="status-and-weekdays">
                                 <div class="status">
@@ -263,6 +234,12 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="decor">
+                            <svg version="1.1" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+                                <path style="fill: #14746f;"
+                                    d="m207.32-0.27344c-4.6406 0.054688-9.0703 1.9531-12.312 5.2734-3.2461 3.3203-5.0352 7.793-4.9805 12.434v31.137h-102.47c-4.6641-0.015624-9.1445 1.8281-12.441 5.125-3.3008 3.3008-5.1445 7.7773-5.125 12.445v476.67c0.007813 4.6484 1.8672 9.1016 5.1602 12.375 3.2969 3.2773 7.7578 5.1094 12.406 5.0898h525c4.6289-0.007813 9.0664-1.8516 12.34-5.125 3.2734-3.2734 5.1172-7.7109 5.125-12.34v-476.67c0.019531-4.6484-1.8125-9.1133-5.0898-12.406-3.2734-3.2969-7.7266-5.1523-12.375-5.1641h-102.44v-31.137c0.058594-4.7305-1.8047-9.2812-5.1602-12.617-3.3555-3.3359-7.918-5.1719-12.645-5.0898-4.625 0.082032-9.0273 1.9922-12.25 5.3086-3.2188 3.3164-5 7.7734-4.9453 12.398v31.137h-250.09v-31.137c0.054687-4.7148-1.793-9.25-5.125-12.582-3.332-3.332-7.8711-5.1797-12.582-5.125zm-102.3 83.844h85.008v31.137c0.13281 6.1602 3.5 11.797 8.8594 14.836 5.3594 3.043 11.922 3.043 17.281 0 5.3555-3.0391 8.7227-8.6758 8.8594-14.836v-31.137h250.09v31.137h-0.003907c-0.10156 4.7109 1.6953 9.2617 4.9883 12.629 3.293 3.3672 7.8047 5.2656 12.512 5.2656 4.7109 0 9.2227-1.8984 12.516-5.2656 3.293-3.3672 5.0898-7.918 4.9844-12.629v-31.137h84.867v90.578h-489.96zm0 125.57 489.97 0.003907v316.09h-489.97zm62.789 36.949c-4.6641-0.015625-9.1445 1.8281-12.441 5.1289-3.3008 3.2969-5.1445 7.7773-5.125 12.441v66.789-0.003906c0.015625 4.6406 1.8789 9.0859 5.1719 12.355 3.2969 3.2695 7.7539 5.0938 12.395 5.0781h66.789c4.6172-0.019531 9.0391-1.8633 12.305-5.125 3.2656-3.2656 5.1055-7.6914 5.125-12.309v-66.785c0.019531-4.6406-1.8086-9.1016-5.0781-12.395-3.2695-3.293-7.7109-5.1562-12.352-5.1758zm143.76 0c-4.6406 0.019531-9.0859 1.8828-12.355 5.1758-3.2695 3.293-5.0938 7.7539-5.0781 12.395v66.789-0.003906c0.019532 4.6172 1.8633 9.043 5.125 12.309 3.2656 3.2617 7.6914 5.1055 12.309 5.125h66.785c4.6406 0.015626 9.1016-1.8086 12.395-5.0781 3.293-3.2695 5.1562-7.7148 5.1758-12.355v-66.785c0.015625-4.6641-1.8281-9.1445-5.1289-12.441-3.2969-3.3008-7.7773-5.1445-12.441-5.1289zm143.93 0c-4.6641-0.015625-9.1445 1.8281-12.441 5.1289-3.3008 3.2969-5.1445 7.7773-5.1289 12.441v66.789-0.003906c0.019531 4.6406 1.8828 9.0859 5.1758 12.355 3.293 3.2695 7.7539 5.0938 12.395 5.0781h66.785c4.6445 0.015626 9.1016-1.8086 12.395-5.0781 3.2969-3.2695 5.1562-7.7148 5.1758-12.355v-66.785c0.015626-4.6641-1.8281-9.1445-5.125-12.441-3.3008-3.3008-7.7773-5.1445-12.445-5.1289zm-270.26 35h31.785v31.789h-31.785zm143.89 0h31.789v31.789h-31.789zm143.79 0h31.891v31.789h-31.891zm-306.93 102.95c-4.3242 0.43359-8.3359 2.4648-11.25 5.6914-2.9102 3.2305-4.5195 7.4258-4.5039 11.777v66.785c-0.019531 4.6641 1.8242 9.1445 5.125 12.441 3.2969 3.3008 7.7773 5.1445 12.441 5.1289h66.789c4.6406-0.019532 9.082-1.8828 12.352-5.1758 3.2695-3.2969 5.0977-7.7539 5.0781-12.395v-66.785c-0.007813-4.625-1.8477-9.0586-5.1133-12.328-3.2656-3.2734-7.6953-5.1211-12.316-5.1406h-66.789c-0.60156-0.03125-1.207-0.03125-1.8125 0zm143.89 0h0.003906c-4.3281 0.43359-8.3359 2.4648-11.25 5.6914-2.9141 3.2305-4.5195 7.4258-4.5078 11.777v66.785c-0.015624 4.6406 1.8086 9.1016 5.0781 12.395 3.2695 3.293 7.7148 5.1562 12.355 5.1758h66.785c4.6641 0.015624 9.1445-1.8281 12.441-5.1289 3.3008-3.2969 5.1445-7.7773 5.1289-12.441v-66.785c-0.011719-4.6484-1.8672-9.1016-5.1641-12.379-3.2969-3.2734-7.7578-5.1055-12.406-5.0898h-66.785c-0.55859-0.027344-1.1172-0.027344-1.6758 0zm143.79 0h0.003906c-4.3281 0.43359-8.3359 2.4648-11.25 5.6914-2.9141 3.2305-4.5195 7.4258-4.5078 11.777v66.785c-0.015625 4.6641 1.8281 9.1445 5.1289 12.441 3.2969 3.3008 7.7773 5.1445 12.441 5.1289h66.785c4.668 0.015624 9.1445-1.8281 12.445-5.1289 3.2969-3.2969 5.1406-7.7773 5.125-12.441v-66.785c-0.011718-4.6484-1.8672-9.1016-5.1641-12.379-3.293-3.2734-7.7578-5.1055-12.406-5.0898h-66.785c-0.60547-0.03125-1.207-0.03125-1.8125 0zm-268.45 35.035h31.785v31.754h-31.781zm143.89 0h31.789v31.754h-31.785zm143.79 0h31.891v31.754h-31.887z" />
+                            </svg>
+                        </div>
                     </div>
                     <div class="select-part">
                         <select name="part" id="">
@@ -296,81 +273,133 @@
                         </select>
                         <div class="decor"><span></span></div>
                     </div>
+
                     <input type="submit" value="تایید">
                 </form>
             </div>
         </div>
         <!-- CONTENT END -->
 
+
+
+
+
+
+
+
+
+
+
         <!-- FOOTER START -->
         <footer>
 
             <!-- FOOTER BLOCKES START -->
 
-            <!-- ROW1 -->
-            <div class="footer-row">
-                <h4>About</h4>
-                <p>The printing and typesetting industry Ipsum has been the industry's thanks to your
-                    passion, hard work creativity</p>
-                <ul>
-                    <li><a href=""><i class="icon-twitter"></i></a></li>
-                    <li><a href=""><i class="icon-facebook"></i></a></li>
-                    <li><a href=""><i class="icon-linkedin"></i></a></li>
-                    <li><a href=""><i class="icon-instagram"></i></a></li>
-                </ul>
-            </div>
             <div class="footer-top">
                 <!-- COLUMNS 1 -->
                 <div class="footer-top-item">
-                    <h4>Quick Links</h4>
+                    <h4>لینک ها</h4>
                     <ul>
-                        <li><a href="about-us.html">About</a></li>
-                        <li><a href="lab-test.html">Lab Test</a></li>
-                        <li><a href="medicince.html">Medicine</a></li>
-                        <li><a href="blog-list.html">Blog</a></li>
-                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="./index.html">خانه</a></li>
+                        <li><a href="./reserve.html">رزرو</a></li>
+                        <li><a href="./blog_home.html">بلاگ</a></li>
+                        <li><a href="./about_us.html">درباره ما</a></li>
                     </ul>
                 </div>
                 <!-- COLUMNS 2 -->
                 <div class="footer-top-item">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about-us.html">About</a></li>
-                        <li><a href="lab-test.html">Lab Test</a></li>
-                        <li><a href="medicince.html">Medicine</a></li>
-                        <li><a href="blog-list.html">Blog</a></li>
-                        <li><a href="contact-us.html">Contact Us</a></li>
-                    </ul>
+                    <img src="./images/logo.svg" alt="">
                 </div>
                 <!-- COLUMNS 3 -->
-                <div class="footer-top-item">
-                    <h4>Community</h4>
+                <div class="footer-top-item" id="contact-us">
+                    <h4>تماس با ما</h4>
                     <ul>
-                        <li>Australia</li>
-                        <li>+41 232 525 5257</li>
-                        <li>+41 856 525 5369</li>
-                        <li>hello@Servicefinder.com</li>
-                        <li>hello@aontheme.com</li>
+                        <li>شماره ها:</li>
+                        <li><a href="tel:02156792867"><bdo dir="ltr"> 021 5679 2867</bdo></a><br>
+                            <a href="tel:09123632736"><bdo dir="ltr"> 0912 363 2736</bdo></a>
+                        </li>
+                        <li>آدرس:</li>
+                        <li>پرند, میدان استقلال, بلوک <bdo dir="ltr">E5</bdo>, طبقه ۴, واحد ۲۶۶</li>
                     </ul>
                 </div>
 
             </div>
 
             <!-- FOOTER COPYRIGHT -->
-            <div class="footer-bottom">
-                <div>Copyright 2022 | All Rights Reserved</div>
-            </div>
+            <div class="footer-bottom"></div>
 
         </footer>
-        <!-- FOOTER END -->
+    </div>
+    <!-- FOOTER END -->
 
-        <!-- BUTTON GO TOP -->
-        <a href="#top-of-page">
-            <div class="scrolltop"></div>
-        </a>
+    <!-- BUTTON GO TOP -->
+    <a href="#top-of-page">
+        <div class="scrolltop"></div>
+    </a>
 
     </div>
 
 </body>
+<!--JAVASCRIPT -->
+<script>
+    window.addEventListener('load', function () {
+        // loading area hiding
+        loadingDNA = document.querySelector('.loading-area');
+        loadingDNA.style.opacity = '0';
+        loadingDNA.style.pointerEvents = 'none';
+
+        // header scroll efects
+        const header = document.querySelector('header');
+        const menu = document.querySelector('.menu');
+        const scroller = document.querySelector('.scrolltop');
+        document.scrollingElement.scrollTop = 0;
+        const shouldIToggleMenu = (function () {
+            let visible = false;
+            return function (scroll) {
+                if ((scroll > 50 && !visible) || (scroll < 50 && visible)) {
+                    visible = !visible;
+                    return true;
+                }
+
+                return false;
+            };
+        })();
+        const shouldIToggleScroller = (function () {
+            let scrollerVisible = false;
+            return function (scroll) {
+                if ((scroll > 500 && !scrollerVisible) || (scroll < 500 && scrollerVisible)) {
+                    scrollerVisible = !scrollerVisible;
+                    return true;
+                }
+
+                return false;
+            };
+        })();
+
+        document.addEventListener('scroll', function () {
+            const scrollTop = (this.scrollingElement.scrollTop);
+            if (shouldIToggleMenu(scrollTop)) {
+                header.classList.toggle('scrolldown');
+                menu.classList.toggle('scrolldown');
+            }
+
+            if (shouldIToggleScroller(scrollTop)) {
+                scroller.classList.toggle('scrolldown');
+            }
+        });
+
+        // alert box
+        const alertBox = document.querySelector('.alert-box');
+        if (alertBox.innerHTML) {
+            alertBox.style.minHeight = '5rem';
+            alertBox.style.padding = '1rem';
+            alertBox.style.borderStyle = 'solid';
+        }
+
+        function isValid() { }
+    });
+
+</script>
+<script src="js/date.js"></script>
 
 </html>

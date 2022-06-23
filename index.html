@@ -6,7 +6,8 @@
 
     <!-- META -->
     <meta charset="utf-8">
-    <meta name="description" content="#" />
+    <meta name="description"
+        content="کلینیک زیبایی وگاس واقع در میدان استقلال پرند اماده ارائه خدمات زیبایی نظیر لیزر مو های زائد تزریق بوتاکس و ژل  مزوتوراپی میباشد" />
 
     <!-- FAVICON ICON -->
     <link rel="icon" type="image/png" href="images/favicon.png" />
@@ -15,7 +16,7 @@
     <title>مرکز لیزر و زیبایی وگاس</title>
 
     <!-- MOBILE SPECIFIC -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- MAIN STYLE SHEET -->
     <link rel="stylesheet" href="css/style.css">
@@ -23,92 +24,6 @@
     <!-- HOMEPAGE STYLE SHEET -->
     <link rel="stylesheet" href="css/homepage.css">
 
-    <!-- JAVASCRIPT -->
-    <script>
-        window.addEventListener('load', function () {
-            // loading area hiding
-            loadingDNA = document.querySelector('.loading-area');
-            loadingDNA.style.opacity = '0';
-            loadingDNA.style.pointerEvents = 'none';
-
-            // header scroll efects
-            const header = document.querySelector('header');
-            const menu = document.querySelector('.menu');
-            const scroller = document.querySelector('.scrolltop');
-            document.scrollingElement.scrollTop = 0;
-            const shouldIToggle = (function () {
-                let visible = false;
-                return function (scroll) {
-                    if ((scroll > 50 && !visible) || (scroll < 50 && visible)) {
-                        visible = !visible;
-                        return true;
-                    }
-
-                    return false;
-                };
-            })();
-
-            document.addEventListener('scroll', function () {
-                const scrollTop = (this.scrollingElement.scrollTop);
-                if (shouldIToggle(scrollTop)) {
-                    header.classList.toggle('scrolldown');
-                    menu.classList.toggle('scrolldown');
-                    scroller.classList.toggle('scrolldown');
-                }
-            });
-
-            // carousel mechanisms
-            var carousel = document.querySelector('.carousel'),
-                items = document.querySelectorAll('.carousel-item'),
-                currdeg = 0;
-
-            const nex = document.querySelector('.next');
-            nex.addEventListener('click', rotate);
-            const pre = document.querySelector('.prev');
-            pre.addEventListener('click', rotate);
-
-            function rotate() {
-                if (this.className == "next") {
-                    currdeg = currdeg - 60;
-                }
-                if (this.className == "prev") {
-                    currdeg = currdeg + 60;
-                }
-                carousel.style.transform = "rotateY(" + currdeg + "deg)";
-                carousel.style.webkitTransform = "rotateY(" + currdeg + "deg)";
-                carousel.style.mozTransform = "rotateY(" + currdeg + "deg)";
-                carousel.style.oTransform = "rotateY(" + currdeg + "deg)";
-                items.forEach((el) => {
-                    el.style.transform = "rotateY(" + (-currdeg) + "deg)";
-                    el.style.webkitTransform = "rotateY(" + (-currdeg) + "deg)";
-                    el.style.mozTransform = "rotateY(" + (-currdeg) + "deg)";
-                    el.style.oTransform = "rotateY(" + (-currdeg) + "deg)";
-                });
-            }
-
-            let dd = setInterval(() => {
-                nex.click();
-            }, 2000);
-
-            items.forEach((el) => {
-                el.addEventListener('mouseover', () => { clearInterval(dd); console.log('hj') });
-                el.addEventListener('mouseout', () => {
-                    dd = setInterval(() => {
-                        nex.click();
-                    }, 2000);
-                });
-            });
-
-            // alert box
-            const alertBox = document.querySelector('.alert-box');
-            if (alertBox.innerHTML) {
-                alertBox.style.minHeight = '5rem';
-                alertBox.style.padding = '1rem';
-                alertBox.style.borderStyle = 'solid';
-            }
-        }); 
-
-    </script>
 
 </head>
 
@@ -116,7 +31,6 @@
 
     <!-- LOADING AREA START -->
     <div class="loading-area">
-
         <div class="dna">
             <div class="ele"></div>
             <div class="ele"></div>
@@ -194,12 +108,12 @@
                     <li class="current-menu-item"><a href="index.html">خانه</a></li>
 
                     <li><a href="./reserve.html">رزرو</a></li>
-                    
+
                     <li><a href="./blog_home.html">بلاگ</a></li>
 
-                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="./about_us.html">درباره ما</a></li>
 
-                    <li id="contact-us"><a href="#site-footer">تماس با ما</a></li>
+                    <li><a href="#contact-us">تماس با ما</a></li>
 
                 </ul>
 
@@ -357,6 +271,16 @@
 
                 <div class="working-area-content">
 
+                    <div class="working-area-cell">
+                        <div class="working-area-media">
+                            <img class="working-area-icon" src="images/working-icon/1.png" alt="">
+                        </div>
+                        <div class="working-area-info">
+                            <h4>Find a Local Physiotherapist</h4>
+                            <p>This helps us determine which Taskers are best for your job</p>
+                        </div>
+                    </div>
+                    
                     <div class="working-area-cell">
                         <div class="working-area-media">
                             <img class="working-area-icon" src="images/working-icon/1.png" alt="">
@@ -527,21 +451,6 @@
                         </div>
                         <div class="f">
                             <div class="carousel-item" style="background-image: url('#');">F</div>
-                        </div>
-                        <div class="g">
-                            <div class="carousel-item">JUS</div>
-                        </div>
-                        <div class="h">
-                            <div class="carousel-item">ERNEST</div>
-                        </div>
-                        <div class="i">
-                            <div class="carousel-item">HOLA</div>
-                        </div>
-                        <div class="j">
-                            <div class="carousel-item">QUE</div>
-                        </div>
-                        <div class="k">
-                            <div class="carousel-item">TAL</div>
                         </div>
                     </div>
                     <div class="next">&gt;&gt;</div>
@@ -746,70 +655,151 @@
 
             <!-- FOOTER BLOCKES START -->
 
-            <!-- ROW1 -->
-            <div class="footer-row">
-                <h4>About</h4>
-                <p>The printing and typesetting industry Ipsum has been the industry's thanks to your
-                    passion, hard work creativity</p>
-                <ul>
-                    <li><a href=""><i class="icon-twitter"></i></a></li>
-                    <li><a href=""><i class="icon-facebook"></i></a></li>
-                    <li><a href=""><i class="icon-linkedin"></i></a></li>
-                    <li><a href=""><i class="icon-instagram"></i></a></li>
-                </ul>
-            </div>
             <div class="footer-top">
                 <!-- COLUMNS 1 -->
                 <div class="footer-top-item">
-                    <h4>Quick Links</h4>
+                    <h4>لینک ها</h4>
                     <ul>
-                        <li><a href="about-us.html">About</a></li>
-                        <li><a href="lab-test.html">Lab Test</a></li>
-                        <li><a href="medicince.html">Medicine</a></li>
-                        <li><a href="blog-list.html">Blog</a></li>
-                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="./index.html">خانه</a></li>
+                        <li><a href="./reserve.html">رزرو</a></li>
+                        <li><a href="./blog_home.html">بلاگ</a></li>
+                        <li><a href="./about_us.html">درباره ما</a></li>
                     </ul>
                 </div>
                 <!-- COLUMNS 2 -->
                 <div class="footer-top-item">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about-us.html">About</a></li>
-                        <li><a href="lab-test.html">Lab Test</a></li>
-                        <li><a href="medicince.html">Medicine</a></li>
-                        <li><a href="blog-list.html">Blog</a></li>
-                        <li><a href="contact-us.html">Contact Us</a></li>
-                    </ul>
+                    <img src="./images/logo.svg" alt="">
                 </div>
                 <!-- COLUMNS 3 -->
-                <div class="footer-top-item">
-                    <h4>Community</h4>
+                <div class="footer-top-item" id="contact-us">
+                    <h4>تماس با ما</h4>
                     <ul>
-                        <li>Australia</li>
-                        <li>+41 232 525 5257</li>
-                        <li>+41 856 525 5369</li>
-                        <li>hello@Servicefinder.com</li>
-                        <li>hello@aontheme.com</li>
+                        <li>شماره ها:</li>
+                        <li><a href="tel:02156792867"><bdo dir="ltr"> 021 5679 2867</bdo></a><br>
+                            <a href="tel:09123632736"><bdo dir="ltr"> 0912 363 2736</bdo></a>
+                        </li>
+                        <li>آدرس:</li>
+                        <li>پرند, میدان استقلال, بلوک <bdo dir="ltr">E5</bdo>, طبقه ۴, واحد ۲۶۶</li>
                     </ul>
                 </div>
 
             </div>
 
             <!-- FOOTER COPYRIGHT -->
-            <div class="footer-bottom">
-                <div>Copyright 2022 | All Rights Reserved</div>
-            </div>
+            <div class="footer-bottom"></div>
+    </div>
 
-        </footer>
-        <!-- FOOTER END -->
+    </footer>
+    <!-- FOOTER END -->
 
-        <!-- BUTTON GO TOP -->
-        <a href="#top-of-page">
-            <div class="scrolltop"></div>
-        </a>
+    <!-- BUTTON GO TOP -->
+    <a href="#top-of-page">
+        <div class="scrolltop"></div>
+    </a>
 
     </div>
 
 </body>
+
+<!-- JAVASCRIPT -->
+<script>
+    window.addEventListener('load', function () {
+        // loading area hiding
+        loadingDNA = document.querySelector('.loading-area');
+        loadingDNA.style.opacity = '0';
+        loadingDNA.style.pointerEvents = 'none';
+
+        // header scroll efects
+        const header = document.querySelector('header');
+        const menu = document.querySelector('.menu');
+        const scroller = document.querySelector('.scrolltop');
+        document.scrollingElement.scrollTop = 0;
+        const shouldIToggleMenu = (function () {
+            let visible = false;
+            return function (scroll) {
+                if ((scroll > 50 && !visible) || (scroll < 50 && visible)) {
+                    visible = !visible;
+                    return true;
+                }
+
+                return false;
+            };
+        })();
+        const shouldIToggleScroller = (function () {
+            let scrollerVisible = false;
+            return function (scroll) {
+                if ((scroll > 500 && !scrollerVisible) || (scroll < 500 && scrollerVisible)) {
+                    scrollerVisible = !scrollerVisible;
+                    return true;
+                }
+
+                return false;
+            };
+        })();
+
+        document.addEventListener('scroll', function () {
+            const scrollTop = (this.scrollingElement.scrollTop);
+            if (shouldIToggleMenu(scrollTop)) {
+                header.classList.toggle('scrolldown');
+                menu.classList.toggle('scrolldown');
+            }
+
+            if (shouldIToggleScroller(scrollTop)) {
+                scroller.classList.toggle('scrolldown');
+            }
+        });
+
+        // carousel mechanisms
+        var carousel = document.querySelector('.carousel'),
+            items = document.querySelectorAll('.carousel-item'),
+            currdeg = 0;
+
+        const nex = document.querySelector('.next');
+        nex.addEventListener('click', rotate);
+        const pre = document.querySelector('.prev');
+        pre.addEventListener('click', rotate);
+
+        function rotate() {
+            if (this.className == "next") {
+                currdeg = currdeg - 60;
+            }
+            if (this.className == "prev") {
+                currdeg = currdeg + 60;
+            }
+            carousel.style.transform = "rotateY(" + currdeg + "deg)";
+            carousel.style.webkitTransform = "rotateY(" + currdeg + "deg)";
+            carousel.style.mozTransform = "rotateY(" + currdeg + "deg)";
+            carousel.style.oTransform = "rotateY(" + currdeg + "deg)";
+            items.forEach((el) => {
+                el.style.transform = "rotateY(" + (-currdeg) + "deg)";
+                el.style.webkitTransform = "rotateY(" + (-currdeg) + "deg)";
+                el.style.mozTransform = "rotateY(" + (-currdeg) + "deg)";
+                el.style.oTransform = "rotateY(" + (-currdeg) + "deg)";
+            });
+        }
+
+        let dd = setInterval(() => {
+            nex.click();
+        }, 3000);
+
+        items.forEach((el) => {
+            el.addEventListener('mouseover', () => { clearInterval(dd); });
+            el.addEventListener('mouseout', () => {
+                dd = setInterval(() => {
+                    nex.click();
+                }, 2000);
+            });
+        });
+
+        // alert box
+        const alertBox = document.querySelector('.alert-box');
+        if (alertBox.innerHTML) {
+            alertBox.style.minHeight = '5rem';
+            alertBox.style.padding = '1rem';
+            alertBox.style.borderStyle = 'solid';
+        }
+    });
+
+</script>
 
 </html>

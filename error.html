@@ -154,45 +154,48 @@
         font-size: 2em;
         animation-duration: 3.5s;
     }
+
     .alert-box.success {
-  
-  border: #358f80  1px;
-  background-color: #358f80bd;
-  color: rgb(0, 70, 70);
 
-}
-.alert-box.danger {
-  
-  border: #ff1000  1px;
-  background-color: #ff1000bd;
-  color: rgb(110, 0, 0);
-}
+        border: #358f80 1px;
+        background-color: #358f80bd;
+        color: rgb(0, 70, 70);
 
-.alert-box {
-  border: #1d1d1d  1px;
-  background-color: #727272bd;
-  color: rgb(44, 44, 44);
-  font-family: nazanin;
-  text-align: right;
-  direction: rtl;
-  pointer-events: none;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 100%);
-  width: 10rem;
-  border-radius: 1rem;
-  animation-name: hider;
-  animation-duration: 4s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-  animation-delay: 2s;
-}
-@keyframes hider {
-  to {
-    opacity: 0;
-  }
-}
+    }
+
+    .alert-box.danger {
+
+        border: #ff1000 1px;
+        background-color: #ff1000bd;
+        color: rgb(110, 0, 0);
+    }
+
+    .alert-box {
+        border: #1d1d1d 1px;
+        background-color: #727272bd;
+        color: rgb(44, 44, 44);
+        font-family: nazanin;
+        text-align: right;
+        direction: rtl;
+        pointer-events: none;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        width: 10rem;
+        border-radius: 1rem;
+        animation-name: hider;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        animation-delay: 2s;
+    }
+
+    @keyframes hider {
+        to {
+            opacity: 0;
+        }
+    }
 </style>
 
 <body>
@@ -208,21 +211,18 @@
             <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
             <div class="buttons">
                 <ul>
-                    <a href="index.html">
-                        <li class="button">خانه</li>
-                    </a>
-                    <a href="reserve.html">
-                        <li class="button">رزرو</li>
-                    </a>
-                    <a href="login-page.html">
-                        <li class="button">ورود</li>
-                    </a>
-                    <a href="blog-home.html">
-                        <li class="button">وبلاگ</li>
-                    </a>
+
+                    <li class="button"><a href="about_us.html">درباره</a></li>
+                    
+                    <li class="button"><a href="reserve.html">رزرو</a></li>
+                    
+                    <li class="button"><a href="blog_home.html">وبلاگ</a></li>
+                    
+                    <li class="button"><a href="index.html">خانه</a></li>
+
                 </ul>
             </div>
-            <div class="alert-box">kkkkkkkk</div>
+            <div class="alert-box"></div>
         </div>
     </div>
 

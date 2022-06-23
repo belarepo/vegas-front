@@ -1,22 +1,27 @@
 .page-content {
+  padding: 7rem 0 5rem;
   display: grid;
   min-height: 100vh;
   width: 100vw;
   overflow: scroll;
 }
 
+input:focus , select:focus {outline-width: 0;}
+
 .form-box {
-  margin: 6rem auto;
+  margin:  auto ;
   border: 2px solid var(--cl-pr9);
   border-radius: 1rem;
-  width: 90%;
   padding: 0.5rem;
+  max-width: calc(100% - 2rem);
 }
 
 .facial-form {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .facial-form > * {
@@ -24,6 +29,8 @@
 }
 
 .form-box input[type='submit'] {
+  min-width: 5rem;
+  margin: 1rem auto;
   font-family: nazanin;
   font-size: 1.5rem;
   padding: 0.5rem;
@@ -32,23 +39,43 @@
   border: none;
 }
 .form-box select {
+  min-height: 1.5rem;
+  appearance: none;
   width: 100%;
   text-align: right;
   font-family: nazanin;
   font-size: 1.5rem;
-  padding-right: 1.5rem;
-  height: 100%;
+  padding-right: 2rem;
+  border-radius: 0.2rem;
+  background-color: var(--cl-pr5);
+  border: none;
+}
+
+.parent-of-date-picker {
+  position: relative;
+  margin: 2rem;
+}
+
+.parent-of-date-picker input {
+  min-height: 1.5rem;
+  appearance: none;
+  width: 100%;
+  text-align: right;
+  font-family: nazanin;
+  font-size: 1.5rem;
+  padding-right: 2rem;
   border-radius: 0.2rem;
   background-color: var(--cl-pr5);
   border: none;
 }
 
 .select-part {
+  margin: 2rem;
   position: relative;
   line-height: normal;
 }
 
-.select-part .decor {
+.decor {
   pointer-events: none;
   position: absolute;
   display: flex;
@@ -69,7 +96,7 @@
   transform: rotate(45deg);
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 460px) {
   .facial-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -77,8 +104,7 @@
     justify-content: center;
   }
 
-.select-part {
-  max-width: 80%;
-
-}
+  .select-part {
+    max-width: 80%;
+  }
 }

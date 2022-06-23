@@ -171,12 +171,19 @@ window.addEventListener('load', function () {
       datePicker.classList.add('on');
       updateShowedMonth();
     });
-    // dateField.addEventListener('blur', (e) => {
-    //   e.target.focus();
+    
+    // disappearing mechanism
+    let isOutside = true;
+    dateField.addEventListener('mouseleave', () => {isOutside = true});
+    dateField.addEventListener('mouseenter', () => {isOutside = false});
+    datePicker.addEventListener('mouseleave', () => {isOutside = true});
+    datePicker.addEventListener('mouseenter', () => {isOutside = false});
+    document.body.onclick = () => {
+      if (isOutside) {
+        datePicker.classList.remove('on');
+      }
+    };
 
-    // });
-
-    console.log(i);
 
     function updateShowedMonth() {
       stat.innerHTML = showedMonth.year + ' ' + showedMonth.monthName();
@@ -209,8 +216,7 @@ window.addEventListener('load', function () {
               dateField.value =
                 showedMonth.year + '-' + showedMonth.month + '-' + td.innerHTML;
               if (td.parentElement.parentElement.querySelector('.choosed')) {
-                td.parentElement
-                  .parentElement
+                td.parentElement.parentElement
                   .querySelector('.choosed')
                   .classList.remove('choosed');
               }

@@ -6,27 +6,21 @@
 
     <!-- META -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="#" />
-    <meta name="author" content="#" />
-    <meta name="robots" content="#" />
-    <meta name="description" content="#" />
+    <meta name="description"
+        content="کلینیک زیبایی وگاس واقع در میدان استقلال پرند اماده ارائه خدمات زیبایی نظیر لیزر مو های زائد تزریق بوتاکس و ژل  مزوتوراپی میباشد" />
 
     <!-- FAVICON ICON -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
 
     <!-- PAGE TITLE HERE -->
-    <title>#</title>
+    <title>مرکز لیزر و زیبایی وگاس</title>
 
     <!-- MOBILE SPECIFIC -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- MAIN STYLE SHEET -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
-
-    <!-- JAVASCRIPT  FILES -->
-    <!-- <script src="js/jquery-3.6.0.min.js" defer></script> -->
 
     <script>
         window.addEventListener("load", function fader() {
@@ -67,38 +61,58 @@
         }
 
         function isValid(ev) {
-            const name = ev.target[1].value;
-            const pass1 = ev.target[2].value;
-            const pass2 = ev.target[3].value;
-            const codeMelli = ev.target[4].value;
-            const consentDes = ev.target[0].value;
-            const consentMob = ev.target[5].value;
+            const name = ev.target[0].value;
+            const pass1 = ev.target[1].value;
+            const pass2 = ev.target[2].value;
+            const codeMelli = ev.target[3].value;
+            const consentDes = document.querySelector('#consent-des').checked;
+            const consentMob = document.querySelector('#consent-mob').checked;
+
+            // prevent default if anything went wrong
+            if (!(name) || !(pass1) || !(pass2) || !(pass1 && pass2 && (pass1 === pass2)) || !(codeMelli.length == 10) || !(consentDes || consentMob)) { ev.preventDefault(); }
 
             console.dir(ev)
-            ev.preventDefault();
-            if (!(((phoneNumber[0] === '0') && (phoneNumber[0] === '9') && (phoneNumber.length === 11)) || (phoneNumber[0] === '9' && phoneNumber.length === 10))) {
-                invalidPhoneNumber(phoneNumber);
-            }
+            // check name field validity
+            invalidName(name ? '' : 'پر کردن این فیلد الزامیست');
+
+
+            // check pass fields validity
+            invalidPass1(pass1 ? '' : 'پر کردن این فیلد الزامیست');
+            invalidPass2(pass2 ? '' : 'پر کردن این فیلد الزامیست');
+
+            if (pass1 && pass2 && (pass1 !== pass2)) { invalidPass1('گذرواژه ها مطابقت ندارند') }
+
+            // check code-melli field validity
+            invalidcCodeMelli(codeMelli ? '' : 'پر کردن این فیلد الزامیست');
+            if ((codeMelli.length < 10) && (codeMelli)) { invalidcCodeMelli('کد ملی نادرست میباشد') }
+
+            // check consent field validity
+            invalidConsent((consentDes || consentMob) ? '' : 'موافقت با قوانین الزامیست')
         }
 
-        function invalidPhoneNumber(invalidNumber) {
-            if (invalidNumber === '') {
-                showTooltip('پر کردن این بخش الزامیست.');
-            } else {
-                showTooltip('لطفا ارقام وارد شده را دوباره چک کنید.');
-            }
-
-
+        function invalidName(msg) {
+            const errContainer = document.querySelector('.name-error');
+            errContainer.innerHTML = msg;
+        }
+        function invalidPass1(msg) {
+            const errContainer = document.querySelector('.pass1-error');
+            errContainer.innerHTML = msg;
+        }
+        function invalidPass2(msg) {
+            const errContainer = document.querySelector('.pass2-error');
+            errContainer.innerHTML = msg;
+        }
+        function invalidcCodeMelli(msg) {
+            const errContainer = document.querySelector('.code-melli-error');
+            errContainer.innerHTML = msg;
+        }
+        function invalidConsent(msg) {
+            const errContainer1 = document.querySelector('.consent-des-error');
+            const errContainer2 = document.querySelector('.consent-mob-error');
+            errContainer1.innerHTML = msg;
+            errContainer2.innerHTML = msg;
         }
 
-        function showTooltip(msg) {
-            const tooltip = document.querySelector('.phons-number-error');
-            tooltip.innerHTML = msg;
-            tooltip.classList.remove('on');
-            requestAnimationFrame(() => {
-                tooltip.classList.add('on');
-            });
-        }
 
 
     </script>
@@ -111,15 +125,15 @@
 
         .form-body label {
             min-width: 12ch;
-            margin: 0 0 0.5rem;
+            margin: 0;
         }
 
 
         .login-right {
             justify-content: space-between;
         }
-        
-        
+
+
         @media screen and (min-width:1000px) {
             .login-right {
                 justify-content: space-evenly;
@@ -171,7 +185,7 @@
                 <div class="terms-text-des">
                     <ul>
                         <li>ununujniujniu</li>
-                        <li>ununujniujnpoo,po,po,pol,iu</li>
+                        <li>ununujniujnpo</li>
                         <li>ununujnijninm</li>
                         <li>ununujniujniu</li>
                         <li>ununujniujniu</li>
@@ -189,9 +203,10 @@
                     </ul>
                 </div>
                 <div>
-                    <input type="checkbox" name="" id="consent-des" form="main-form"><label for="consent-des"> شرایط و
+                    <input type="checkbox" name="" id="consent-des"><label for="consent-des"> شرایط و
                         مقررات را
                         میپذیرم</label>
+                    <span class="consent-des-error"></span>
                 </div>
             </div>
 
@@ -231,19 +246,23 @@
                     <div>
                         <label for="name-field">نام و نام‌خانوادگی</label>
                         <input type="text" maxlength="30" name="" id="name-field">
+                        <div class="name-error"></div>
                     </div>
                     <div>
                         <label for="pass-1">رمز عبور</label>
                         <input type="password" maxlength="20" name="" id="pass-1">
+                        <div class="pass1-error"></div>
                     </div>
                     <div>
                         <label for="pass-2">تکرار رمز عبور</label>
                         <input type="password" maxlength="20" name="" id="pass-2">
+                        <div class="pass2-error"></div>
                     </div>
                     <div>
                         <label for="sent-code">کد ملی</label>
                         <input type="text" name="" maxlength="10" id="sent-code" oninput="codeCorrector(this, event)"
                             autocomplete="off">
+                        <div class="code-melli-error"></div>
                     </div>
                 </form>
 
@@ -253,7 +272,7 @@
                         <li>ununujniujniu</li>
                         <li>ununujnijninm</li>
                         <li>ununujniujniu</li>
-                        <li>ununujnikjnojnolkmokimoikmoikmujniu</li>
+                        <li>ununujnikjnoj</li>
                         <li>ununujniujniu</li>
                         <li>ununujniujniu</li>
                         <li>ununujniujniu</li>
@@ -268,8 +287,9 @@
                     </ul>
                 </div>
                 <div class="terms-consent-mob" style="margin: 10px;">
-                    <input type="checkbox" name="" id="consent-mob" form="main-form">
+                    <input type="checkbox" name="" id="consent-mob">
                     <label for="consent-mob"> شرایط و مقررات را میپذیرم</label>
+                    <span class="consent-mob-error"></span>
                 </div>
                 <input type="submit" value="ثبت نام" form="main-form" style="margin: 20px;align-self: center;">
             </div>
